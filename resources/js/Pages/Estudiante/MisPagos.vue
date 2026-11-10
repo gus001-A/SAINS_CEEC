@@ -52,7 +52,7 @@ const puedeSubir = computed(() => ['pendiente', 'rechazado'].includes(props.pago
                     <a-typography-text copyable code>{{ pago.referencia_pago }}</a-typography-text>
                 </a-descriptions-item>
                 <a-descriptions-item label="Monto">
-                    <b style="color: #1851ad">{{ money(pago.monto_pago) }} MXN</b>
+                    <b style="color: #1b75bc">{{ money(pago.monto_pago) }} MXN</b>
                 </a-descriptions-item>
                 <a-descriptions-item label="Método">{{ pago.tipo_pago }}</a-descriptions-item>
                 <a-descriptions-item label="Fecha de solicitud">{{ pago.fecha_pago_formato }}</a-descriptions-item>

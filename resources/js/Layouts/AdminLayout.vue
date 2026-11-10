@@ -1,5 +1,6 @@
 <script setup>
 import { computed, h, onMounted, onUnmounted, ref, watch } from 'vue';
+import { urlApp } from '@/utils/urlApp';
 import { Head, Link, router, usePage } from '@inertiajs/vue3';
 import {
     UserOutlined, BellOutlined, LogoutOutlined, MenuOutlined,
@@ -140,7 +141,7 @@ onMounted(() => showFlash(page.props.flash));
                     <button class="adm-burger" @click="drawerOpen = true"><MenuOutlined /></button>
 
                     <Link :href="route('admin.dashboard')" class="adm-brand">
-                        <img src="/images/ceec-logo.svg" alt="CEEC · Centro de Estudios Cafetales" />
+                        <img :src="urlApp('/images/ceec-logo.svg')" alt="CEEC · Centro de Estudios Cafetales" />
                     </Link>
 
                     <nav class="adm-nav">
@@ -210,7 +211,7 @@ onMounted(() => showFlash(page.props.flash));
 
             <a-drawer v-model:open="drawerOpen" placement="left" :width="272" :body-style="{ padding: '8px 0' }">
                 <template #title>
-                    <img src="/images/ceec-logo.svg" alt="CEEC · Centro de Estudios Cafetales" style="height: 30px" />
+                    <img :src="urlApp('/images/ceec-logo.svg')" alt="CEEC · Centro de Estudios Cafetales" style="height: 30px" />
                 </template>
                 <a-menu
                     mode="inline"
@@ -242,12 +243,12 @@ onMounted(() => showFlash(page.props.flash));
 .adm-blob { position: absolute; border-radius: 50%; filter: blur(100px); opacity: .45; }
 .adm-blob--1 {
     width: 560px; height: 560px; top: -240px; right: -180px;
-    background: radial-gradient(circle, rgba(22, 100, 219, .32), transparent 70%);
+    background: radial-gradient(circle, rgba(27, 117, 188, .32), transparent 70%);
     animation: sains-blob 22s ease-in-out infinite;
 }
 .adm-blob--2 {
     width: 480px; height: 480px; bottom: -220px; left: -160px;
-    background: radial-gradient(circle, rgba(21, 80, 208, .18), transparent 70%);
+    background: radial-gradient(circle, rgba(27, 117, 188, .18), transparent 70%);
     animation: sains-blob 28s ease-in-out infinite reverse;
 }
 
@@ -257,7 +258,7 @@ onMounted(() => showFlash(page.props.flash));
     background: rgba(255, 255, 255, .82);
     backdrop-filter: saturate(180%) blur(16px);
     border-bottom: 1px solid rgba(226, 232, 240, .8);
-    box-shadow: 0 1px 0 rgba(255, 255, 255, .6) inset, 0 8px 24px -20px rgba(24, 81, 173, .5);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, .6) inset, 0 8px 24px -20px rgba(27, 117, 188, .5);
     transition: box-shadow .25s ease, background .25s ease;
 }
 .adm-header.is-scrolled {
@@ -266,7 +267,7 @@ onMounted(() => showFlash(page.props.flash));
 }
 .adm-header::before {
     content: ''; position: absolute; inset: 0 0 auto 0; height: 3px;
-    background: linear-gradient(90deg, #1851ad, #1550d0 40%, #ec4899 75%, #f59e0b);
+    background: linear-gradient(90deg, #1b75bc, #1b75bc 40%, #f5b301 75%, #f59e0b);
     background-size: 300% 100%;
     animation: sains-shimmer 8s ease-in-out infinite;
 }
@@ -297,12 +298,12 @@ onMounted(() => showFlash(page.props.flash));
 }
 .adm-nav__item :deep(.anticon) { font-size: 14px; opacity: .85; transition: transform .16s ease; }
 .adm-nav__caret { font-size: 9px !important; opacity: .55; }
-.adm-nav__item:hover { color: #214784; background: #eef3f9; }
+.adm-nav__item:hover { color: #145a92; background: #e8f2fa; }
 .adm-nav__item:hover :deep(.anticon:not(.adm-nav__caret)) { transform: translateY(-1px); opacity: 1; }
 .adm-nav__item.is-active {
     color: #ffffff; font-weight: 650;
-    background: linear-gradient(135deg, #1664db, #1851ad);
-    box-shadow: 0 8px 18px -8px rgba(24, 81, 173, .55);
+    background: linear-gradient(135deg, #2a8ad6, #1b75bc);
+    box-shadow: 0 8px 18px -8px rgba(27, 117, 188, .55);
 }
 .adm-nav__item.is-active :deep(.anticon) { opacity: 1; }
 @keyframes sains-nav-underline { from { transform: scaleX(0); opacity: 0; } to { transform: scaleX(1); opacity: 1; } }
@@ -326,7 +327,7 @@ onMounted(() => showFlash(page.props.flash));
     display: flex; align-items: center; justify-content: center;
     transition: background .15s ease, border-color .15s ease, color .15s ease;
 }
-.adm-icon-btn:hover { background: #edf2f8; border-color: #dbe5f1; color: #1851ad; }
+.adm-icon-btn:hover { background: #edf2f8; border-color: #dbe5f1; color: #1b75bc; }
 
 .adm-user {
     display: flex; align-items: center; gap: 9px;
@@ -334,14 +335,14 @@ onMounted(() => showFlash(page.props.flash));
     padding: 4px 12px 4px 5px; cursor: pointer;
     transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
 }
-.adm-user:hover { border-color: #c5d5e9; box-shadow: 0 6px 16px -10px rgba(24, 81, 173, .5); transform: translateY(-1px); }
-.adm-user.is-open { border-color: #9cbae2; box-shadow: 0 8px 20px -10px rgba(24, 81, 173, .55); }
+.adm-user:hover { border-color: #c4dcef; box-shadow: 0 6px 16px -10px rgba(27, 117, 188, .5); transform: translateY(-1px); }
+.adm-user.is-open { border-color: #8fbfe3; box-shadow: 0 8px 20px -10px rgba(27, 117, 188, .55); }
 .adm-user__caret { font-size: 10px; color: #94a3b8; transition: transform .2s ease; }
-.adm-user.is-open .adm-user__caret { transform: rotate(180deg); color: #1664db; }
+.adm-user.is-open .adm-user__caret { transform: rotate(180deg); color: #2a8ad6; }
 .adm-user__avatar {
     width: 30px; height: 30px; border-radius: 50%; flex: none;
-    background: linear-gradient(135deg, #1851ad, #1550d0); color: #fff; font-size: 12px; font-weight: 700;
-    box-shadow: 0 4px 10px -4px rgba(24, 81, 173, .6);
+    background: linear-gradient(135deg, #1b75bc, #1b75bc); color: #fff; font-size: 12px; font-weight: 700;
+    box-shadow: 0 4px 10px -4px rgba(27, 117, 188, .6);
     display: flex; align-items: center; justify-content: center;
 }
 .adm-user__meta { display: flex; flex-direction: column; line-height: 1.15; text-align: left; }
@@ -376,7 +377,7 @@ onMounted(() => showFlash(page.props.flash));
 .notif-date { display: block; font-size: 11px; color: #94a3b8; margin-top: 1px; }
 .notif-foot {
     display: block; text-align: center; padding: 11px; font-size: 12.5px; font-weight: 600;
-    color: #1851ad; border-top: 1px solid #eef1f6; text-decoration: none;
+    color: #1b75bc; border-top: 1px solid #eef1f6; text-decoration: none;
 }
 
 @media (max-width: 1040px) {
@@ -406,7 +407,7 @@ onMounted(() => showFlash(page.props.flash));
     transition: background .14s ease, color .14s ease;
 }
 .adm-submenu .ant-dropdown-menu-item:hover {
-    background: #eef3f9 !important;
-    color: #214784 !important;
+    background: #e8f2fa !important;
+    color: #145a92 !important;
 }
 </style>

@@ -1,13 +1,99 @@
-import { h } from 'vue';
-import { message, Modal } from 'ant-design-vue';
-import {
-    DeleteOutlined, ExclamationCircleFilled, QuestionCircleFilled, LogoutOutlined,
-} from '@ant-design/icons-vue';
+import { message as antMessage } from 'ant-design-vue';
+import Swal from 'sweetalert2';
+import 'sweetalert2/dist/sweetalert2.min.css';
 
-message.config({ top: '72px', duration: 3, maxCount: 3 });
+antMessage.config({ top: '72px', duration: 3, maxCount: 3 });
+
+/* ------------------------------------------------------------------
+ * Alertas estilo SweetAlert (SweetAlert2) con los colores de CEEC.
+ * ------------------------------------------------------------------ */
+const COLOR = {
+    primario: '#1b75bc',
+    peligro: '#dc2626',
+    cancelar: '#6e7881',
+};
+
+const swal = Swal.mixin({
+    buttonsStyling: true,
+    heightAuto: false,             // no alterar la altura de <body> (descuadra los layouts)
+    reverseButtons: true,          // "Cancelar" a la izquierda, acción a la derecha
+    focusCancel: false,
+    confirmButtonColor: COLOR.primario,
+    cancelButtonColor: COLOR.cancelar,
+    cancelButtonText: 'Cancelar',
+    customClass: { popup: 'ceec-swal' },
+});
+
+const escapar = (t) => String(t ?? '')
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 
 /**
- * Muestra los mensajes flash de Inertia (page.props.flash) como toasts.
+ * Aviso de advertencia (modal con el ícono "!" de SweetAlert).
+ */
+export function alertaAdvertencia(texto, titulo = 'Atención') {
+    return swal.fire({
+        icon: 'warning',
+        title: titulo,
+        text: texto,
+        confirmButtonText: 'Entendido',
+    });
+}
+
+/**
+ * Aviso pequeño en la esquina (toast de SweetAlert); no interrumpe lo que hace el usuario.
+ * Útil, por ejemplo, para los avisos de tiempo durante un examen.
+ */
+export function avisoToast(texto, { icon = 'warning', segundos = 5 } = {}) {
+    return Swal.fire({
+        toast: true,
+        heightAuto: false,
+        position: 'top-end',
+        icon,
+        title: texto,
+        showConfirmButton: false,
+        timer: segundos * 1000,
+        timerProgressBar: true,
+        customClass: { container: 'ceec-swal-toasts', popup: `ceec-swal ceec-swal--toast ceec-swal--${icon}` },
+        didOpen: (el) => {
+            el.addEventListener('mouseenter', Swal.stopTimer);
+            el.addEventListener('mouseleave', Swal.resumeTimer);
+        },
+    });
+}
+
+// ¿Hay una alerta/confirmación de SweetAlert abierta? (un toast la reemplazaría)
+const hayAlertaAbierta = () => Swal.isVisible() && !Swal.getPopup()?.classList.contains('swal2-toast');
+
+const toastOMensaje = (icon, tipoAnt) => (contenido, duracion) => {
+    const texto = typeof contenido === 'object' && contenido !== null ? contenido.content : contenido;
+    if (hayAlertaAbierta()) return antMessage[tipoAnt](texto, duracion);
+    return avisoToast(texto, { icon, segundos: typeof duracion === 'number' && duracion > 0 ? duracion : 3.5 });
+};
+
+/**
+ * Éxito, error e información: toast de SweetAlert en la esquina superior derecha.
+ * Advertencias: alerta de SweetAlert con botón "Entendido".
+ * (message.loading y lo demás siguen siendo los de Ant Design).
+ */
+const reemplazos = {
+    success: toastOMensaje('success', 'success'),
+    error: toastOMensaje('error', 'error'),
+    info: toastOMensaje('info', 'info'),
+    warning: (contenido) => alertaAdvertencia(typeof contenido === 'object' && contenido !== null ? contenido.content : contenido),
+};
+reemplazos.warn = reemplazos.warning;
+
+export const message = new Proxy(antMessage, {
+    get(target, prop) {
+        if (prop in reemplazos) return reemplazos[prop];
+        const v = target[prop];
+        return typeof v === 'function' ? v.bind(target) : v;
+    },
+});
+
+/**
+ * Muestra los mensajes flash de Inertia (page.props.flash).
  */
 export function showFlash(flash) {
     if (!flash) return;
@@ -18,60 +104,64 @@ export function showFlash(flash) {
 }
 
 /**
- * Diálogo de confirmación con cabecera ilustrada.
+ * Diálogo de confirmación estilo SweetAlert.
  *
  * @param {object}  opts
  * @param {string}  opts.title
  * @param {string}  opts.content     texto descriptivo
  * @param {string}  opts.okText
+ * @param {string}  opts.cancelText
  * @param {boolean} opts.danger      botón principal en rojo
- * @param {'delete'|'warn'|'ask'|'logout'} opts.tone   estilo del icono
- * @param {Function} opts.onOk
+ * @param {'delete'|'warn'|'ask'|'logout'} opts.tone   ícono del diálogo
+ * @param {Function} opts.onOk       puede devolver una promesa (el botón muestra "cargando")
+ * @param {Function} opts.onCancel
  */
-function baseConfirm({ title, content = '', okText = 'Confirmar', danger = false, tone = 'ask', onOk }) {
-    const tones = {
-        delete: { icon: DeleteOutlined, color: '#dc2626', bg: '#fee2e2' },
-        warn: { icon: ExclamationCircleFilled, color: '#d97706', bg: '#fef3c7' },
-        ask: { icon: QuestionCircleFilled, color: '#1851ad', bg: '#eef3f9' },
-        logout: { icon: LogoutOutlined, color: '#dc2626', bg: '#fee2e2' },
-    };
-    const t = tones[tone] ?? tones.ask;
+function baseConfirm({ title, content = '', nota = '', okText = 'Confirmar', cancelText = 'Cancelar', danger = false, tone = 'ask', onOk, onCancel }) {
+    const iconos = { delete: 'warning', warn: 'warning', ask: 'question', logout: 'question' };
 
-    Modal.confirm({
-        icon: null,
-        centered: true,
-        width: 420,
-        wrapClassName: 'sains-confirm',
-        okText,
-        okButtonProps: { danger, size: 'large', shape: 'round' },
-        cancelText: 'Cancelar',
-        cancelButtonProps: { size: 'large', shape: 'round' },
-        title: h('div', { class: 'sains-confirm__head' }, [
-            h('span', {
-                class: 'sains-confirm__icon',
-                style: { background: t.bg, color: t.color },
-            }, [h(t.icon)]),
-            h('span', { class: 'sains-confirm__title' }, title),
-        ]),
-        content: content
-            ? h('p', { class: 'sains-confirm__text' }, content)
-            : null,
-        onOk,
+    const html = [
+        content ? `<div class="ceec-swal__content">${escapar(content)}</div>` : '',
+        nota ? `<div class="ceec-swal__nota">${escapar(nota)}</div>` : '',
+    ].join('');
+
+    return swal.fire({
+        icon: iconos[tone] ?? 'question',
+        title,
+        html: html || undefined,
+        showCancelButton: true,
+        confirmButtonText: okText,
+        cancelButtonText: cancelText,
+        confirmButtonColor: danger ? COLOR.peligro : COLOR.primario,
+        showLoaderOnConfirm: true,
+        allowOutsideClick: () => !Swal.isLoading(),
+        allowEscapeKey: () => !Swal.isLoading(),
+        preConfirm: async () => {
+            try {
+                await onOk?.();
+            } catch (e) {
+                // Quien llama ya muestra su propio mensaje de error.
+            }
+            return true;
+        },
+    }).then((r) => {
+        if (r.isDismissed) onCancel?.();
+        return r;
     });
 }
 
 /**
  * Diálogo de confirmación de borrado.
  */
-export function confirmDelete({ title = '¿Eliminar registro?', content = '', onOk }) {
-    baseConfirm({ title, content, okText: 'Sí, eliminar', danger: true, tone: 'delete', onOk });
+export function confirmDelete({ title = '¿Eliminar registro?', content = '', onOk, onCancel }) {
+    return baseConfirm({
+        title, content, nota: 'Esta acción no se puede deshacer.',
+        okText: 'Sí, eliminar', danger: true, tone: 'delete', onOk, onCancel,
+    });
 }
 
 /**
  * Diálogo de confirmación genérico.
  */
-export function confirmAction({ title, content = '', okText = 'Confirmar', danger = false, tone, onOk }) {
-    baseConfirm({ title, content, okText, danger, tone: tone ?? (danger ? 'warn' : 'ask'), onOk });
+export function confirmAction({ title, content = '', okText = 'Confirmar', cancelText = 'Cancelar', danger = false, tone, onOk, onCancel }) {
+    return baseConfirm({ title, content, okText, cancelText, danger, tone: tone ?? (danger ? 'warn' : 'ask'), onOk, onCancel });
 }
-
-export { message };

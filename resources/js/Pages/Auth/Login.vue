@@ -78,7 +78,7 @@ function submit() {
 
 /* 👇 Enlaces SIN subrayado */
 .au-link {
-    color: #15509b;
+    color: #1b75bc;
     font-weight: 600;
     text-decoration: none !important;
 }
@@ -86,7 +86,7 @@ function submit() {
 .au-link:hover,
 .au-link:focus,
 .au-link:visited {
-    color: #163964;
+    color: #0a3a6e;
     text-decoration: none !important;
 }
 

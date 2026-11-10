@@ -61,7 +61,7 @@ function eliminar() {
     height: 48px;
     border-radius: 14px;
     background: #fff7ed;
-    color: #ea580c;
+    color: #d99a00;
     font-size: 22px;
 }
 .inc__title { margin: 2px 0 6px; font-size: 17px; font-weight: 700; color: var(--sains-ink, #0f172a); }

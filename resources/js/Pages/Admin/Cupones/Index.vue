@@ -1,5 +1,6 @@
 <script setup>
 import { computed, ref, watch } from 'vue';
+import { urlApp } from '@/utils/urlApp';
 import { router, useForm } from '@inertiajs/vue3';
 import {
     PlusOutlined, SearchOutlined, TagsOutlined, ThunderboltOutlined, ReloadOutlined,
@@ -158,8 +159,8 @@ const columns = [
     { title: 'Código', dataIndex: 'codigo', key: 'codigo', width: 134 },
     { title: 'Descuento', key: 'descuento', width: 130 },
     { title: 'Estado', key: 'estado', width: 120 },
-    { title: 'Expira', dataIndex: 'fecha_expiracion', key: 'expira', width: 150 },
-    { title: 'Generó', dataIndex: 'generador', key: 'generador', width: 180 },
+    { title: 'Expira', dataIndex: 'fecha_expiracion', key: 'expira', width: 140, responsive: ['lg'] },
+    { title: 'Generó', dataIndex: 'generador', key: 'generador', width: 170, ellipsis: true, responsive: ['xl'] },
     { title: '', key: 'acciones', width: 110, align: 'right' },
 ];
 </script>
@@ -181,7 +182,7 @@ const columns = [
         </div>
 
         <a-card :bordered="false">
-            <a-table class="filtered-table" :columns="columns" :data-source="cupones.data" :pagination="pagination" row-key="id" size="middle" :scroll="{ x: 900 }" @change="onChange">
+            <a-table class="filtered-table" :columns="columns" :data-source="cupones.data" :pagination="pagination" row-key="id" size="middle" :scroll="{ x: 620 }" @change="onChange">
                 <template #summary>
                     <a-table-summary-row>
                         <a-table-summary-cell v-for="(col, i) in columns" :key="col.key ?? i" :index="i">
@@ -308,7 +309,7 @@ const columns = [
             <div v-if="shareCupon" class="share-box">
                 <div class="share-hero">
                     <span class="share-hero__orb" aria-hidden="true"></span>
-                    <img src="/images/bachillerato-nacional-sm.png" alt="Bachillerato Nacional SAINS" class="share-hero__logo" />
+                    <img :src="urlApp('/images/bachillerato-nacional-sm.png')" alt="Bachillerato Nacional SAINS" class="share-hero__logo" />
                     <div class="share-hero__title">Compartir cupón</div>
                     <div class="share-hero__sub">Envíalo por WhatsApp o copia el mensaje</div>
                 </div>
@@ -366,7 +367,7 @@ const columns = [
 .cup-code {
     display: inline-flex; align-items: center; gap: 5px; cursor: pointer; max-width: 100%;
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-weight: 700; font-size: 12px;
-    color: #1851ad; background: #eef3f9; padding: 2px 8px; border-radius: 7px;
+    color: #1b75bc; background: #e8f2fa; padding: 2px 8px; border-radius: 7px;
     transition: background .14s ease;
 }
 .cup-code:hover { background: #e0e8f3; }
@@ -382,7 +383,7 @@ const columns = [
     padding: 24px 24px 22px;
     text-align: center;
     color: #fff;
-    background: linear-gradient(135deg, #1851ad 0%, #1550d0 60%, #1751df 100%);
+    background: linear-gradient(135deg, #1b75bc 0%, #1b75bc 60%, #1b75bc 100%);
 }
 .share-hero__orb {
     position: absolute;
@@ -429,7 +430,7 @@ const columns = [
 .voucher__amount {
     flex: none; width: 108px;
     display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px;
-    background: linear-gradient(135deg, #1851ad, #1550d0);
+    background: linear-gradient(135deg, #1b75bc, #1b75bc);
     color: #fff; padding: 10px;
 }
 .voucher__amount b { font-size: 20px; font-weight: 800; letter-spacing: -.02em; }

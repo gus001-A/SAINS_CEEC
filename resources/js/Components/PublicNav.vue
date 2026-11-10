@@ -1,5 +1,6 @@
 <script setup>
 import { computed, nextTick, onBeforeUnmount, onMounted, ref, watch } from 'vue';
+import { urlApp } from '@/utils/urlApp';
 import { Link, router, usePage } from '@inertiajs/vue3';
 import { confirmAction } from '@/lib/notify';
 
@@ -173,7 +174,7 @@ function logout() {
         <div class="pnav__inner">
             <!-- Logo -->
             <Link href="/" class="pnav__brand">
-                <img src="/images/ceec-logo.svg" alt="CEEC · Centro de Estudios Cafetales" />
+                <img :src="urlApp('/images/ceec-logo.svg')" alt="CEEC · Centro de Estudios Cafetales" />
                 <span class="pnav__brand-underline"></span>
             </Link>
 
@@ -303,7 +304,7 @@ function logout() {
     position: absolute;
     inset: 0 0 auto 0;
     height: 2px;
-    background: linear-gradient(90deg, #15509b, #1851ad 40%, #1550d0 60%, #f59e0b);
+    background: linear-gradient(90deg, #1b75bc, #1b75bc 40%, #1b75bc 60%, #f59e0b);
     background-size: 250% 100%;
     animation: pnav-flow 9s linear infinite;
     opacity: 0.9;
@@ -353,7 +354,7 @@ function logout() {
     height: 2.5px;
     width: 0;
     border-radius: 3px;
-    background: linear-gradient(90deg, #15509b, #1851ad, #f59e0b);
+    background: linear-gradient(90deg, #1b75bc, #1b75bc, #f59e0b);
     transition: width 0.35s cubic-bezier(0.16, 1, 0.3, 1);
 }
 .pnav__brand:hover .pnav__brand-underline { width: 100%; }
@@ -374,8 +375,8 @@ function logout() {
     left: 0;
     height: 34px;
     border-radius: 11px;
-    background: linear-gradient(135deg, rgba(21, 80, 155, 0.14), rgba(21, 80, 208, 0.14));
-    box-shadow: inset 0 0 0 1px rgba(21, 80, 155, 0.22), 0 6px 16px -10px rgba(24, 81, 173, 0.5);
+    background: linear-gradient(135deg, rgba(27, 117, 188, 0.14), rgba(27, 117, 188, 0.14));
+    box-shadow: inset 0 0 0 1px rgba(27, 117, 188, 0.22), 0 6px 16px -10px rgba(27, 117, 188, 0.5);
     pointer-events: none;
     z-index: 0;
     transition:
@@ -401,10 +402,10 @@ function logout() {
     animation-delay: calc(var(--i, 0) * 45ms + 0.12s);
 }
 .pnav__link svg { width: 15px; height: 15px; opacity: 0.75; transition: transform 0.2s ease, opacity 0.2s ease; }
-.pnav__link:hover { color: #15509b; background: rgba(21, 80, 155, 0.06); }
+.pnav__link:hover { color: #1b75bc; background: rgba(27, 117, 188, 0.06); }
 .pnav__link:hover svg { transform: translateY(-1px); }
 .pnav__link:active { transform: scale(0.96); }
-.pnav__link.is-active { color: #163964; }
+.pnav__link.is-active { color: #0a3a6e; }
 .pnav__link.is-active svg { opacity: 1; animation: pnav-pop 0.45s ease; }
 @keyframes pnav-link-in {
     from { opacity: 0; transform: translateY(-9px); }
@@ -433,19 +434,19 @@ function logout() {
 }
 .pnav__btn svg { width: 15px; height: 15px; }
 .pnav__btn--ghost {
-    color: #15509b;
+    color: #1b75bc;
     background: transparent;
-    box-shadow: inset 0 0 0 1.5px rgba(21, 80, 155, 0.35);
+    box-shadow: inset 0 0 0 1.5px rgba(27, 117, 188, 0.35);
 }
-.pnav__btn--ghost:hover { background: rgba(21, 80, 155, 0.08); box-shadow: inset 0 0 0 1.5px #15509b; }
+.pnav__btn--ghost:hover { background: rgba(27, 117, 188, 0.08); box-shadow: inset 0 0 0 1.5px #1b75bc; }
 .pnav__btn--solid {
     position: relative;
     overflow: hidden;
     color: #fff;
-    background: linear-gradient(135deg, #15509b 0%, #1851ad 55%, #1550d0 100%);
-    box-shadow: 0 12px 26px -12px rgba(24, 81, 173, 0.6);
+    background: linear-gradient(135deg, #1b75bc 0%, #1b75bc 55%, #1b75bc 100%);
+    box-shadow: 0 12px 26px -12px rgba(27, 117, 188, 0.6);
 }
-.pnav__btn--solid:hover { transform: translateY(-2px); box-shadow: 0 16px 34px -12px rgba(24, 81, 173, 0.75); color: #fff; }
+.pnav__btn--solid:hover { transform: translateY(-2px); box-shadow: 0 16px 34px -12px rgba(27, 117, 188, 0.75); color: #fff; }
 .pnav__btn--solid::after {
     content: '';
     position: absolute;
@@ -472,7 +473,7 @@ function logout() {
     cursor: pointer;
     transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 }
-.pnav__user:hover { border-color: #c5d5e9; box-shadow: 0 6px 16px -10px rgba(21, 80, 155, 0.5); transform: translateY(-1px); }
+.pnav__user:hover { border-color: #c4dcef; box-shadow: 0 6px 16px -10px rgba(27, 117, 188, 0.5); transform: translateY(-1px); }
 .pnav__avatar {
     width: 30px;
     height: 30px;
@@ -481,11 +482,11 @@ function logout() {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #15509b, #1851ad);
+    background: linear-gradient(135deg, #1b75bc, #1b75bc);
     color: #fff;
     font-size: 12px;
     font-weight: 700;
-    box-shadow: 0 4px 10px -4px rgba(21, 80, 155, 0.6);
+    box-shadow: 0 4px 10px -4px rgba(27, 117, 188, 0.6);
 }
 .pnav__uname {
     font-size: 12.5px;
@@ -514,7 +515,7 @@ function logout() {
     display: block;
     height: 3px;
     border-radius: 3px;
-    background: #163964;
+    background: #0a3a6e;
     transition: transform 0.28s ease, opacity 0.2s ease;
 }
 .pnav__burger.open span:nth-child(1) { transform: translateY(8.5px) rotate(45deg); }
@@ -547,11 +548,11 @@ function logout() {
     transition: background 0.15s ease, color 0.15s ease, transform 0.15s ease;
 }
 .pnav__mlink svg { width: 17px; height: 17px; opacity: 0.75; }
-.pnav__mlink:hover { background: rgba(21, 80, 155, 0.06); color: #15509b; transform: translateX(3px); }
+.pnav__mlink:hover { background: rgba(27, 117, 188, 0.06); color: #1b75bc; transform: translateX(3px); }
 .pnav__mlink.is-active {
-    background: linear-gradient(135deg, rgba(21, 80, 155, 0.12), rgba(21, 80, 208, 0.1));
-    color: #163964;
-    box-shadow: inset 2px 0 0 #15509b;
+    background: linear-gradient(135deg, rgba(27, 117, 188, 0.12), rgba(27, 117, 188, 0.1));
+    color: #0a3a6e;
+    box-shadow: inset 2px 0 0 #1b75bc;
 }
 .pnav__mlink.is-active svg { opacity: 1; }
 .pnav__mlink.is-danger { color: #dc2626; }
@@ -603,7 +604,7 @@ function logout() {
     gap: 11px;
     padding: 13px 12px 14px;
     margin: -6px -6px 6px;
-    background: linear-gradient(135deg, #15509b, #1851ad);
+    background: linear-gradient(135deg, #1b75bc, #1b75bc);
     color: #fff;
 }
 .pnav-menu__avatar {
@@ -644,8 +645,8 @@ function logout() {
     color: #475569;
     transition: background 0.14s ease, color 0.14s ease;
 }
-.pnav-menu__item svg { width: 15px; height: 15px; color: #1851ad; }
-.pnav-menu__item:hover { background: #eef3f9; color: #163964; }
+.pnav-menu__item svg { width: 15px; height: 15px; color: #1b75bc; }
+.pnav-menu__item:hover { background: #e8f2fa; color: #0a3a6e; }
 .pnav-menu__item.is-danger { color: #dc2626; }
 .pnav-menu__item.is-danger svg { color: #dc2626; }
 .pnav-menu__item.is-danger:hover { background: #fee2e2; color: #b91c1c; }

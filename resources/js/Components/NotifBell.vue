@@ -154,10 +154,10 @@ onUnmounted(() => clearInterval(timer));
 .nb-btn {
     display: flex; align-items: center; justify-content: center;
     width: 38px; height: 38px; border: 0; border-radius: 11px; cursor: pointer;
-    background: rgba(22, 100, 219, .08); color: #1851ad;
+    background: rgba(27, 117, 188, .08); color: #1b75bc;
     transition: background .15s ease;
 }
-.nb-btn:hover { background: rgba(22, 100, 219, .16); }
+.nb-btn:hover { background: rgba(27, 117, 188, .16); }
 .nb-btn.is-pulse { animation: nb-shake .5s ease-in-out 3; }
 @keyframes nb-shake {
     0%, 100% { transform: rotate(0); }
@@ -174,14 +174,14 @@ onUnmounted(() => clearInterval(timer));
     padding: 12px 15px; border-bottom: 1px solid #eef1f6; background: #fafbfd; font-size: 13.5px;
 }
 .nb-head__actions { display: inline-flex; align-items: center; gap: 8px; }
-.nb-mark { border: 0; background: transparent; color: #1851ad; font-size: 12px; font-weight: 600; cursor: pointer; }
+.nb-mark { border: 0; background: transparent; color: #1b75bc; font-size: 12px; font-weight: 600; cursor: pointer; }
 .nb-mark:hover { text-decoration: underline; }
 .nb-sound {
     display: inline-flex; align-items: center; justify-content: center;
     width: 24px; height: 24px; border: 0; border-radius: 7px; cursor: pointer;
-    background: #eef3f9; color: #1851ad; font-size: 12px; transition: background .14s ease, color .14s ease;
+    background: #e8f2fa; color: #1b75bc; font-size: 12px; transition: background .14s ease, color .14s ease;
 }
-.nb-sound:hover { background: #1851ad; color: #fff; }
+.nb-sound:hover { background: #1b75bc; color: #fff; }
 .nb-sound.is-off { background: #f1f5f9; color: #94a3b8; }
 .nb-badge {
     display: inline-flex; align-items: center; justify-content: center; min-width: 18px; height: 18px;
@@ -191,10 +191,10 @@ onUnmounted(() => clearInterval(timer));
 .nb-check {
     width: 24px; height: 24px; flex: none; border: 0; border-radius: 7px; cursor: pointer;
     display: flex; align-items: center; justify-content: center; align-self: center;
-    background: #eef3f9; color: #1851ad; font-size: 11px; opacity: 0; transition: opacity .12s ease;
+    background: #e8f2fa; color: #1b75bc; font-size: 11px; opacity: 0; transition: opacity .12s ease;
 }
 .nb-item:hover .nb-check { opacity: 1; }
-.nb-check:hover { background: #1851ad; color: #fff; }
+.nb-check:hover { background: #1b75bc; color: #fff; }
 
 .nb-body { max-height: 384px; overflow-y: auto; }
 .nb-empty {
@@ -204,7 +204,7 @@ onUnmounted(() => clearInterval(timer));
 .nb-empty__ic {
     width: 44px; height: 44px; border-radius: 13px; margin-bottom: 6px;
     display: flex; align-items: center; justify-content: center; font-size: 19px;
-    background: #eef3f9; color: #9cbae2;
+    background: #e8f2fa; color: #8fbfe3;
 }
 .nb-empty small { font-size: 11.5px; color: #94a3b8; }
 
@@ -216,9 +216,9 @@ onUnmounted(() => clearInterval(timer));
 .nb-item:hover { background: #f6f8fc; }
 .nb-item.is-unread { background: #f2f5fa; }
 .nb-item.is-unread::before {
-    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: #1664db;
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: #2a8ad6;
 }
-.nb-item.is-unread:hover { background: #eef3f9; }
+.nb-item.is-unread:hover { background: #e8f2fa; }
 .nb-ico {
     width: 34px; height: 34px; flex: none; border-radius: 10px;
     display: flex; align-items: center; justify-content: center; font-size: 15px; color: #fff;
@@ -226,9 +226,9 @@ onUnmounted(() => clearInterval(timer));
 .nb-ico.c-green { background: linear-gradient(135deg, #34d399, #10b981); }
 .nb-ico.c-red { background: linear-gradient(135deg, #f87171, #ef4444); }
 .nb-ico.c-amber { background: linear-gradient(135deg, #fbbf24, #f59e0b); }
-.nb-ico.c-blue { background: linear-gradient(135deg, #7ba5d9, #1774e6); }
-.nb-ico.c-violet { background: linear-gradient(135deg, #7e9dd9, #2264e9); }
-.nb-ico.c-indigo { background: linear-gradient(135deg, #1664db, #1851ad); }
+.nb-ico.c-blue { background: linear-gradient(135deg, #6aa8d8, #2a8ad6); }
+.nb-ico.c-violet { background: linear-gradient(135deg, #6aa8d8, #2a8ad6); }
+.nb-ico.c-indigo { background: linear-gradient(135deg, #2a8ad6, #1b75bc); }
 .nb-txt { display: flex; flex-direction: column; gap: 1px; min-width: 0; flex: 1; }
 .nb-title { font-size: 12.8px; font-weight: 650; color: #0f172a; }
 .nb-msg { font-size: 12px; color: #64748b; line-height: 1.4; }
@@ -236,7 +236,7 @@ onUnmounted(() => clearInterval(timer));
 
 .nb-foot {
     display: block; text-align: center; padding: 11px; font-size: 12.5px; font-weight: 600;
-    color: #1851ad; border-top: 1px solid #eef1f6; text-decoration: none;
+    color: #1b75bc; border-top: 1px solid #eef1f6; text-decoration: none;
 }
 .nb-foot:hover { background: #f6f8fc; }
 </style>

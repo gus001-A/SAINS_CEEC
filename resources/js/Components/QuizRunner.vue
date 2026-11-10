@@ -2,12 +2,11 @@
 import { computed, onBeforeUnmount, onMounted, reactive, ref } from 'vue';
 import { router } from '@inertiajs/vue3';
 import axios from 'axios';
-import { Modal } from 'ant-design-vue';
 import {
     ClockCircleOutlined, CheckCircleOutlined, ArrowLeftOutlined,
     ArrowRightOutlined, FlagOutlined, CheckOutlined,
 } from '@ant-design/icons-vue';
-import { message } from '@/lib/notify';
+import { message, confirmAction, avisoToast } from '@/lib/notify';
 
 const props = defineProps({
     examen: { type: Object, required: true },
@@ -18,7 +17,7 @@ const props = defineProps({
     maxPreguntas: { type: Number, default: null },
     intentosRestantes: { type: Number, default: null },
     storageKey: { type: String, default: 'quiz' },
-    accent: { type: String, default: '#1851ad' },
+    accent: { type: String, default: '#1b75bc' },
     // Examen de prueba: número de preguntas elegido (50/150/250); se conserva al cambiar de simulador.
     tamano: { type: Number, default: null },
 });
@@ -52,19 +51,19 @@ function revisarAvisos() {
     const t = restante.value;
     if (!avisos.mitad && t <= limiteSegundos / 2 && t > limiteSegundos / 4) {
         avisos.mitad = true;
-        message.warning('Ya transcurrió la mitad del tiempo. Llevas ' + respondidas.value + ' de ' + total + ' preguntas.', 5);
+        avisoToast('Ya transcurrió la mitad del tiempo. Llevas ' + respondidas.value + ' de ' + total + ' preguntas.');
     }
     if (!avisos.tresCuartos && t <= limiteSegundos / 4 && t > 300) {
         avisos.tresCuartos = true;
-        message.warning('Te queda una cuarta parte del tiempo. Revisa las preguntas que te faltan.', 5);
+        avisoToast('Te queda una cuarta parte del tiempo. Revisa las preguntas que te faltan.');
     }
     if (!avisos.cinco && t <= 300 && t > 60) {
         avisos.cinco = true;
-        message.error('¡Últimos 5 minutos! Asegúrate de enviar tu examen.', 6);
+        avisoToast('¡Últimos 5 minutos! Asegúrate de enviar tu examen.', { icon: 'error', segundos: 6 });
     }
     if (!avisos.uno && t <= 60) {
         avisos.uno = true;
-        message.error('¡Último minuto! El examen se enviará solo al terminar el tiempo.', 6);
+        avisoToast('¡Último minuto! El examen se enviará solo al terminar el tiempo.', { icon: 'error', segundos: 6 });
     }
 }
 
@@ -101,12 +100,12 @@ function finalizar() {
     if (enviando.value) return;
     const faltan = total - respondidas.value;
     if (faltan > 0) {
-        Modal.confirm({
+        confirmAction({
             title: 'Preguntas sin responder',
             content: `Has respondido ${respondidas.value} de ${total}. ¿Finalizar de todas formas?`,
             okText: 'Sí, finalizar',
             cancelText: 'Seguir respondiendo',
-            centered: true,
+            tone: 'warn',
             onOk: enviar,
         });
         return;
@@ -163,13 +162,11 @@ function cambiarExamen(id) {
     if (id === props.examen.id) return;
     const go = () => router.visit(route('estudiante.simulador.cargar', props.tamano ? { id, preguntas: props.tamano } : id));
     if (respondidas.value > 0) {
-        Modal.confirm({
+        confirmAction({
             title: '¿Cambiar de examen?',
             content: 'Perderás las respuestas que llevas en este simulador.',
             okText: 'Sí, cambiar',
-            okType: 'danger',
-            cancelText: 'Cancelar',
-            centered: true,
+            danger: true,
             onOk: go,
         });
     } else {
@@ -303,7 +300,7 @@ onBeforeUnmount(() => clearInterval(timer));
 .quiz-top {
     position: relative; overflow: hidden; isolation: isolate;
     display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap;
-    background: linear-gradient(135deg, var(--accent), #1664db);
+    background: linear-gradient(135deg, var(--accent), #2a8ad6);
     color: #fff; border-radius: 20px; padding: 24px 28px; margin-bottom: 18px;
     box-shadow: 0 20px 45px -24px var(--accent);
 }
@@ -341,7 +338,7 @@ onBeforeUnmount(() => clearInterval(timer));
     transition: all .15s ease;
 }
 .quiz-nav-dot.done { background: #dcfce7; border-color: #86efac; color: #15803d; }
-.quiz-nav-dot.active { border-color: var(--accent, #1851ad); box-shadow: 0 0 0 2px rgba(24, 81, 173,.18); }
+.quiz-nav-dot.active { border-color: var(--accent, #1b75bc); box-shadow: 0 0 0 2px rgba(27, 117, 188,.18); }
 
 .quiz-question-head { margin-bottom: 12px; }
 .quiz-question-num { font-weight: 700; color: #0f172a; }
@@ -353,7 +350,7 @@ onBeforeUnmount(() => clearInterval(timer));
     border: 1px solid #e2e8f0; border-radius: 13px; cursor: pointer; transition: all .15s ease;
 }
 .quiz-option:hover { background: #f8fafc; transform: translateX(2px); }
-.quiz-option.selected { border-color: var(--accent, #1851ad); background: #eef3f9; }
+.quiz-option.selected { border-color: var(--accent, #1b75bc); background: #e8f2fa; }
 .quiz-option input { position: absolute; opacity: 0; pointer-events: none; }
 .quiz-option-letter {
     width: 28px; height: 28px; border-radius: 8px; flex: none;
@@ -361,14 +358,14 @@ onBeforeUnmount(() => clearInterval(timer));
     font-size: 12.5px; font-weight: 700; color: #64748b;
     background: #f1f5f9; transition: all .15s ease;
 }
-.quiz-option.selected .quiz-option-letter { background: var(--accent, #1851ad); color: #fff; }
+.quiz-option.selected .quiz-option-letter { background: var(--accent, #1b75bc); color: #fff; }
 .quiz-option-mark {
     width: 22px; height: 22px; border-radius: 50%; border: 2px solid #cbd5e1; flex: none;
     display: flex; align-items: center; justify-content: center; font-size: 11px; color: transparent;
     transition: all .15s ease;
 }
 .quiz-option.selected .quiz-option-mark {
-    border-color: var(--accent, #1851ad); background: var(--accent, #1851ad); color: #fff;
+    border-color: var(--accent, #1b75bc); background: var(--accent, #1b75bc); color: #fff;
 }
 .quiz-option-text { flex: 1; font-size: .95rem; color: #1e293b; }
 .quiz-actions { display: flex; justify-content: space-between; gap: 12px; margin-top: 22px; }

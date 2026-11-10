@@ -1,5 +1,6 @@
 <script setup>
 import { computed, onMounted, watch } from 'vue';
+import { urlApp } from '@/utils/urlApp';
 import { Head, Link, router, usePage } from '@inertiajs/vue3';
 import { antdTheme, antdLocale } from '@/theme';
 import { showFlash } from '@/lib/notify';
@@ -34,7 +35,7 @@ onMounted(() => showFlash(page.props.flash));
             <div class="container pub-footer__inner">
                 <div class="row g-4">
                     <div class="col-lg-5 col-md-12">
-                        <span class="pub-footer-logo"><img src="/images/ceec-logo.svg" alt="CEEC · Centro de Estudios Cafetales" /></span>
+                        <span class="pub-footer-logo"><img :src="urlApp('/images/ceec-logo.svg')" alt="CEEC · Centro de Estudios Cafetales" /></span>
                         <p class="pub-footer__about">SAINS es una empresa graduada de la Incubadora de Base Tecnológica MIDAS UAEM y galardonada con el Premio Nacional Cuezcomate 2016.</p>
                     </div>
                     <div class="col-lg-3 col-md-6">
@@ -96,7 +97,7 @@ onMounted(() => showFlash(page.props.flash));
     right: -160px;
     width: 560px;
     height: 560px;
-    background: radial-gradient(circle, rgba(24, 81, 173, .35), transparent 65%);
+    background: radial-gradient(circle, rgba(27, 117, 188, .35), transparent 65%);
     pointer-events: none;
 }
 .pub-footer__inner { position: relative; }
@@ -154,7 +155,7 @@ onMounted(() => showFlash(page.props.flash));
     height: 38px;
     border-radius: 11px;
     background: rgba(255, 255, 255, .08);
-    color: #9cbae2;
+    color: #8fbfe3;
     transition: background .15s ease;
 }
 .pub-footer__ico--wa { color: #4ade80; }
@@ -175,8 +176,8 @@ onMounted(() => showFlash(page.props.flash));
 .pub-footer__badge {
     padding: .25rem .75rem;
     border-radius: 999px;
-    background: rgba(24, 81, 173, .25);
-    color: #c5d5e9;
+    background: rgba(27, 117, 188, .25);
+    color: #c4dcef;
     font-size: .78rem;
     font-weight: 600;
 }

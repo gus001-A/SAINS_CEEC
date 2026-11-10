@@ -403,7 +403,7 @@ function claseOpcion(r, op) {
 
 /* ---------- Hero ---------- */
 .er-hero {
-    --tone: #1851ad; --tone-soft: #e8f0fb;
+    --tone: #1b75bc; --tone-soft: #e8f2fa;
     display: flex; align-items: center; gap: 28px; flex-wrap: wrap;
     padding: 24px 28px; margin-bottom: 18px; border-radius: 20px;
     background: var(--sains-surface); border: 1px solid var(--sains-line); box-shadow: var(--sains-shadow-md);
@@ -413,7 +413,7 @@ function claseOpcion(r, op) {
     content: ''; position: absolute; inset: 0 auto 0 0; width: 6px; background: var(--tone);
 }
 .er-hero.is-top { --tone: #059669; --tone-soft: #d1fae5; }
-.er-hero.is-ok { --tone: #1851ad; --tone-soft: #e0eaf9; }
+.er-hero.is-ok { --tone: #1b75bc; --tone-soft: #e1eef8; }
 .er-hero.is-bad { --tone: #dc2626; --tone-soft: #fee2e2; }
 
 .er-ring { position: relative; width: 132px; height: 132px; flex: none; }
@@ -490,7 +490,7 @@ function claseOpcion(r, op) {
 .er-map__dot.is-ok { background: #dcfce7; color: #15803d; }
 .er-map__dot.is-bad { background: #fee2e2; color: #b91c1c; }
 .er-map__dot.is-changed { border-color: #f5b301; box-shadow: inset 0 0 0 1px #f5b301; }
-.er-map__dot.is-auto { border-color: #9333ea; box-shadow: inset 0 0 0 1px #9333ea; }
+.er-map__dot.is-auto { border-color: #145a92; box-shadow: inset 0 0 0 1px #145a92; }
 .er-map__legend { display: flex; flex-wrap: wrap; gap: 6px 12px; margin-top: 12px; font-size: 11.5px; color: var(--sains-muted); }
 
 .er-toolbar { display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap; margin-bottom: 12px; }
@@ -501,7 +501,7 @@ function claseOpcion(r, op) {
 }
 .er-tab span { margin-left: 4px; font-size: 11.5px; padding: 1px 7px; border-radius: 999px; background: rgba(15, 23, 42, .06); }
 .er-tab.is-active { background: #fff; color: var(--sains-primary); box-shadow: var(--sains-shadow-sm); }
-.er-tab.is-active span { background: #e0eaf9; }
+.er-tab.is-active span { background: #e1eef8; }
 .er-search { max-width: 260px; border-radius: 10px; }
 
 /* ---------- Pregunta ---------- */
@@ -530,7 +530,7 @@ function claseOpcion(r, op) {
     transition: background .15s, border-color .15s;
 }
 .er-opt.is-click { cursor: pointer; }
-.er-opt.is-click:hover { border-color: var(--sains-primary); background: #f3f7fe; }
+.er-opt.is-click:hover { border-color: var(--sains-primary); background: #f2f8fc; }
 .er-opt__letter {
     flex: none; width: 24px; height: 24px; border-radius: 7px; display: grid; place-items: center;
     font-size: 12px; font-weight: 700; background: #e9edf4; color: var(--sains-muted);
@@ -539,7 +539,7 @@ function claseOpcion(r, op) {
 .er-opt__badges { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
 .er-opt__badges em { font-style: normal; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 999px; white-space: nowrap; }
 .b-right { background: #dcfce7; color: #15803d; }
-.b-chosen { background: #e0eaf9; color: var(--sains-primary); }
+.b-chosen { background: #e1eef8; color: var(--sains-primary); }
 .b-orig { background: #f1f5f9; color: var(--sains-muted); text-decoration: line-through; }
 .er-opt.is-right { border-color: #bbf7d0; background: #f0fdf4; }
 .er-opt.is-right .er-opt__letter { background: #22c55e; color: #fff; }

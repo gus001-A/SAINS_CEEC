@@ -18,7 +18,7 @@ const iconNode = computed(() => (props.icon ? h(props.icon) : null));
                 v-if="back"
                 :href="typeof back === 'string' ? back : undefined"
                 class="sains-pagehead__icon"
-                style="background: #eef3f9; color: #1851ad; box-shadow: none; cursor: pointer"
+                style="background: #e8f2fa; color: #1b75bc; box-shadow: none; cursor: pointer"
                 @click.prevent="$emit('back')"
             >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>

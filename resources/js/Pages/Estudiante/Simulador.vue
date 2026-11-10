@@ -145,8 +145,8 @@ const pocas = computed(() => props.tamano && props.preguntas.length < props.tama
     border: 1px solid var(--sains-line); background: #fff;
     display: flex; flex-direction: column; gap: 2px; transition: all .15s ease;
 }
-.sim-chip:hover { border-color: #c5d5e9; background: #f8faff; }
-.sim-chip.on { border-color: #1851ad; background: #eef3f9; box-shadow: 0 0 0 2px rgba(24, 81, 173, .12); }
+.sim-chip:hover { border-color: #c4dcef; background: #f8faff; }
+.sim-chip.on { border-color: #1b75bc; background: #e8f2fa; box-shadow: 0 0 0 2px rgba(27, 117, 188, .12); }
 .sim-chip b { font-size: 13.5px; color: #0f172a; }
 .sim-chip small { font-size: 11.5px; color: #64748b; }
 

@@ -139,12 +139,12 @@ const columns = [
     background: #fafbfd; padding: 16px 18px; margin: 6px 0 4px;
     transition: border-color .15s ease, background .15s ease;
 }
-.rand-box.is-on { border-color: #c5d5e9; background: #f2f5fa; }
+.rand-box.is-on { border-color: #c4dcef; background: #f2f5fa; }
 .rand-box__head { display: flex; align-items: flex-start; gap: 13px; }
 .rand-box__ic {
     width: 40px; height: 40px; flex: none; border-radius: 11px;
     display: flex; align-items: center; justify-content: center; font-size: 17px; color: #fff;
-    background: linear-gradient(135deg, #f59e0b, #f97316);
+    background: linear-gradient(135deg, #f59e0b, #e0a200);
 }
 .rand-box__head > div:nth-child(2) { flex: 1; }
 .rand-box__title { font-weight: 700; color: #0f172a; font-size: 14px; }
@@ -152,9 +152,9 @@ const columns = [
 .rand-box__stats { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
 .rand-chip {
     font-size: 12px; font-weight: 550; padding: 4px 11px; border-radius: 999px;
-    background: #eef3f9; color: #214784;
+    background: #e8f2fa; color: #145a92;
 }
-.rand-chip.is-pick { background: #e1e9f4; color: #15509b; }
+.rand-chip.is-pick { background: #e1e9f4; color: #1b75bc; }
 .rand-chip.is-rand { background: #fef3c7; color: #b45309; }
 .rand-chip.is-warn { background: #fee2e2; color: #b91c1c; }
 </style>

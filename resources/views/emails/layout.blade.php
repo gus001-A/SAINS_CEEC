@@ -13,7 +13,7 @@
      */
     $accent = trim($__env->yieldContent('accent', 'indigo'));
     $accents = [
-        'indigo' => ['#1851ad', '#214784', '#eef3f9', '#1b3a6c'],
+        'indigo' => ['#1b75bc', '#145a92', '#eef3f9', '#1b3a6c'],
         'green'  => ['#16a34a', '#15803d', '#ecfdf5', '#166534'],
         'red'    => ['#dc2626', '#b91c1c', '#fef2f2', '#991b1b'],
         'amber'  => ['#d97706', '#b45309', '#fffbeb', '#92400e'],
@@ -88,7 +88,7 @@
 
                     <!-- Pie -->
                     <tr>
-                        <td style="background-color:#0e2d66; padding:26px 40px; text-align:center; border-top:4px solid #f5b301;">
+                        <td style="background-color:#0a3a6e; padding:26px 40px; text-align:center; border-top:4px solid #f5b301;">
                             <div style="font-size:16px; font-weight:800; color:#ffffff; letter-spacing:1px;">SAINS Bachillerato · ISSFAM</div>
                             <div style="font-size:11px; color:rgba(255,255,255,0.62); margin-top:8px; line-height:1.7;">
                                 Bachillerato Tecnológico con Formación Profesional para personal y beneficiarios de la Guardia Nacional<br>

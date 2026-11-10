@@ -112,7 +112,7 @@ const fuerza = computed(() => {
     return Math.min(s, 4);
 });
 const fuerzaTxt = computed(() => ['', 'Débil', 'Aceptable', 'Buena', 'Excelente'][fuerza.value]);
-const fuerzaColor = computed(() => ['#e2e8f0', '#ef4444', '#f59e0b', '#1774e6', '#16a34a'][fuerza.value]);
+const fuerzaColor = computed(() => ['#e2e8f0', '#ef4444', '#f59e0b', '#2a8ad6', '#16a34a'][fuerza.value]);
 
 const confirmacion = computed(() => estadoConfirmacion(
     form.password, form.password_confirmation, form.errors.password_confirmation,
@@ -253,14 +253,14 @@ function submit() {
 <style scoped>
 /* ===== Enlaces SIN subrayado ===== */
 .au-link {
-    color: #15509b;
+    color: #1b75bc;
     font-weight: 600;
     text-decoration: none !important;
 }
 .au-link:hover,
 .au-link:focus,
 .au-link:visited {
-    color: #163964;
+    color: #0a3a6e;
     text-decoration: none !important;
 }
 .au-link--strong {
@@ -288,7 +288,7 @@ function submit() {
     gap: 10px;
 }
 .au-datos.is-renapo { border-color: #bbf7d0; background: #f0fdf4; }
-.au-datos__row { display: flex; align-items: center; gap: 10px; color: #15509b; }
+.au-datos__row { display: flex; align-items: center; gap: 10px; color: #1b75bc; }
 .au-datos__row > div { display: flex; flex-direction: column; min-width: 0; flex: 1; }
 .au-datos__row small { font-size: 11px; color: #64748b; text-transform: uppercase; letter-spacing: .04em; }
 .au-datos__row b { font-size: 14px; color: #0f172a; overflow-wrap: anywhere; }

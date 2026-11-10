@@ -137,7 +137,7 @@ const patron = [
 <style scoped>
 .au {
     --au-navy: #0a3a6e;
-    --au-blue: #0d47a1;
+    --au-blue: #1b75bc;
     --au-gold: #f5b301;
     --au-green: #2f9e44;
     --au-bg: #f3f6fb;
@@ -471,7 +471,7 @@ const patron = [
     right: 24px;
     width: 220px;
     height: 160px;
-    background-image: radial-gradient(rgba(13, 71, 161, .16) 1.5px, transparent 1.6px);
+    background-image: radial-gradient(rgba(27, 117, 188, .16) 1.5px, transparent 1.6px);
     background-size: 16px 16px;
     mask-image: linear-gradient(225deg, #000 30%, transparent 85%);
     pointer-events: none;
@@ -656,7 +656,7 @@ const patron = [
 .au .ant-btn { border-radius: 14px; font-weight: 600; }
 .au .ant-btn-lg { height: 54px; font-size: 16px; }
 .au .ant-checkbox-wrapper { font-size: 14px; }
-.au .ant-btn-primary { background: #0d47a1; box-shadow: 0 10px 22px -12px rgba(13, 71, 161, .8); }
-.au .ant-btn-primary:not(:disabled):hover { background: #0a3a86; }
-.au .ant-input-affix-wrapper > .ant-input-prefix { color: #0d47a1; margin-inline-end: 8px; }
+.au .ant-btn-primary { background: #1b75bc; box-shadow: 0 10px 22px -12px rgba(27, 117, 188, .8); }
+.au .ant-btn-primary:not(:disabled):hover { background: #145a92; }
+.au .ant-input-affix-wrapper > .ant-input-prefix { color: #1b75bc; margin-inline-end: 8px; }
 </style>

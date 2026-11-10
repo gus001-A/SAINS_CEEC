@@ -16,7 +16,7 @@
         <tr>
             <td align="center" style="padding:10px 0 22px;">
                 <a href="{{ $resetLink }}"
-                   style="display:inline-block; background-color:#1851ad; color:#ffffff; text-decoration:none; font-size:15px; font-weight:700; padding:15px 38px; border-radius:12px;">
+                   style="display:inline-block; background-color:#1b75bc; color:#ffffff; text-decoration:none; font-size:15px; font-weight:700; padding:15px 38px; border-radius:12px;">
                     Crear nueva contraseña
                 </a>
             </td>
@@ -36,7 +36,7 @@
         ¿El botón no funciona? Copia y pega este enlace en tu navegador:
     </p>
     <p style="margin:0 0 18px; font-size:12px; word-break:break-all;">
-        <a href="{{ $resetLink }}" style="color:#1851ad;">{{ $resetLink }}</a>
+        <a href="{{ $resetLink }}" style="color:#1b75bc;">{{ $resetLink }}</a>
     </p>
 
     <p style="margin:0 0 6px; font-size:13px; font-weight:700; color:#0f172a;">Recomendaciones para tu nueva contraseña</p>

@@ -1,5 +1,6 @@
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
+import { urlApp } from '@/utils/urlApp';
 import { Link, usePage } from '@inertiajs/vue3';
 import { confirmAction } from '@/lib/notify';
 import PublicLayout from '@/Layouts/PublicLayout.vue';
@@ -104,7 +105,7 @@ const paths = [
         icon: 'fa-user-plus',
         label: 'Regístrate',
         title: 'Crea tu cuenta e inicia tu proceso de inscripción',
-        img: '/images/midete_tips.png',
+        img: urlApp('/images/midete_tips.png'),
         desc: 'Regístrate en la plataforma y completa tu proceso de inscripción en minutos.',
         items: [
             'Crea tu cuenta en línea',
@@ -117,7 +118,7 @@ const paths = [
         icon: 'fa-laptop',
         label: 'Estudia en línea',
         title: 'Accede a la plataforma, consulta tus materiales y actividades',
-        img: '/images/forta_tips.png',
+        img: urlApp('/images/forta_tips.png'),
         desc: 'Ingresa a la plataforma cuando quieras y avanza a tu propio ritmo.',
         items: [
             'Materiales y actividades en línea',
@@ -130,7 +131,7 @@ const paths = [
         icon: 'fa-clipboard-check',
         label: 'Acredita',
         title: 'Cumple con tus evaluaciones y requisitos del programa',
-        img: '/images/prac_tips.png',
+        img: urlApp('/images/prac_tips.png'),
         desc: 'Entrega tus actividades y acredita las evaluaciones del plan de estudios.',
         items: [
             'Evaluaciones en línea',
@@ -143,7 +144,7 @@ const paths = [
         icon: 'fa-award',
         label: 'Obtén tu certificado',
         title: 'En solo 3 meses recibe tu certificado de bachillerato',
-        img: '/images/simula_tips.png',
+        img: urlApp('/images/simula_tips.png'),
         desc: 'Al concluir el programa, recibirás tu certificado de bachillerato con validez oficial.',
         items: [
             'Certificado avalado por la SEP',
@@ -154,14 +155,14 @@ const paths = [
 ];
 
 const instructors = [
-    { name: 'Dr. Giovanni Rios', area: 'Formato de Examen', img: '/images/dr.-giovanni-rios.jpg' },
-    { name: 'Lic. Edith Saldaña', area: 'Inglés', img: '/images/lic.-edith-saldana.jpg' },
-    { name: 'Dr. Bernardino Brisleño', area: 'Estrategias de Estudio', img: '/images/dr.-bernarnino-brisleno.jpg' },
-    { name: 'Mtra. Maria M. Casas', area: 'Matemáticas', img: '/images/mtra.-maria-casas.jpg' },
-    { name: 'Mtra. Monse Orellana', area: 'Comprensión Lectora', img: '/images/mtra.-monse-orellana.jpg' },
-    { name: 'Lic. Israel Saldaña', area: 'Español', img: '/images/lic.-israel-saldana.jpg' },
-    { name: 'Dr. Hector Martinez', area: 'Historia y Cs. Sociales', img: '/images/dr.-hector-matrinez.jpg' },
-    { name: 'Mtra. Nilda C. Sanchez', area: 'Ciencias', img: '/images/mtra.-nilda-c.-sanchez.jpg' },
+    { name: 'Dr. Giovanni Rios', area: 'Formato de Examen', img: urlApp('/images/dr.-giovanni-rios.jpg') },
+    { name: 'Lic. Edith Saldaña', area: 'Inglés', img: urlApp('/images/lic.-edith-saldana.jpg') },
+    { name: 'Dr. Bernardino Brisleño', area: 'Estrategias de Estudio', img: urlApp('/images/dr.-bernarnino-brisleno.jpg') },
+    { name: 'Mtra. Maria M. Casas', area: 'Matemáticas', img: urlApp('/images/mtra.-maria-casas.jpg') },
+    { name: 'Mtra. Monse Orellana', area: 'Comprensión Lectora', img: urlApp('/images/mtra.-monse-orellana.jpg') },
+    { name: 'Lic. Israel Saldaña', area: 'Español', img: urlApp('/images/lic.-israel-saldana.jpg') },
+    { name: 'Dr. Hector Martinez', area: 'Historia y Cs. Sociales', img: urlApp('/images/dr.-hector-matrinez.jpg') },
+    { name: 'Mtra. Nilda C. Sanchez', area: 'Ciencias', img: urlApp('/images/mtra.-nilda-c.-sanchez.jpg') },
 ];
 
 const premiumFeatures = [
@@ -420,9 +421,9 @@ function selectPlan(openAuth, user) {
 /* ===================== Tokens locales ===================== */
 .hero,
 .sec {
-    --brand: #1851ad;
-    --brand-2: #1550d0;
-    --brand-ink: #0e2d66;
+    --brand: #1b75bc;
+    --brand-2: #1b75bc;
+    --brand-ink: #0a3a6e;
     --amber: #f5b301;
     --ink: #0f172a;
     --muted: #64748b;
@@ -457,10 +458,10 @@ function selectPlan(openAuth, user) {
 .btn-xl i { font-size: 0.9em; }
 .btn-xl--solid {
     background: #fff;
-    color: #1b3a6c;
+    color: #0a3a6e;
     box-shadow: 0 18px 40px -14px rgba(0, 0, 0, 0.45);
 }
-.btn-xl--solid:hover { transform: translateY(-3px); box-shadow: 0 24px 50px -14px rgba(0, 0, 0, 0.55); color: #1b3a6c; }
+.btn-xl--solid:hover { transform: translateY(-3px); box-shadow: 0 24px 50px -14px rgba(0, 0, 0, 0.55); color: #0a3a6e; }
 .btn-xl--ghost {
     background: rgba(255, 255, 255, 0.08);
     color: #fff;
@@ -475,12 +476,12 @@ function selectPlan(openAuth, user) {
 .btn-xl--white:hover { transform: translateY(-3px); color: var(--brand-2); }
 .btn-xl--pink {
     color: #fff;
-    background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
-    box-shadow: 0 16px 34px -12px rgba(236, 72, 153, 0.55);
+    background: linear-gradient(135deg, #f5b301 0%, #d99a00 100%);
+    box-shadow: 0 16px 34px -12px rgba(245, 179, 1, 0.55);
     width: 100%;
     justify-content: center;
 }
-.btn-xl--pink:hover { transform: translateY(-3px); box-shadow: 0 22px 44px -12px rgba(236, 72, 153, 0.7); color: #fff; }
+.btn-xl--pink:hover { transform: translateY(-3px); box-shadow: 0 22px 44px -12px rgba(245, 179, 1, 0.7); color: #fff; }
 
 /* ===================== Encabezados de sección ===================== */
 .eyebrow {
@@ -536,7 +537,7 @@ function selectPlan(openAuth, user) {
     align-items: center;
     overflow: hidden;
     color: #fff;
-    background: linear-gradient(135deg, #0b1120 0%, #0d1d36 45%, #17325d 78%, #214784 100%);
+    background: linear-gradient(135deg, #0b1120 0%, #0d1d36 45%, #0a3a6e 78%, #145a92 100%);
     padding: 120px 0 90px;
 }
 .hero__bg { position: absolute; inset: 0; pointer-events: none; }
@@ -550,7 +551,7 @@ function selectPlan(openAuth, user) {
 .hero__orb--indigo {
     width: 520px; height: 520px;
     top: -160px; left: -120px;
-    background: radial-gradient(circle, #1664db, transparent 68%);
+    background: radial-gradient(circle, #2a8ad6, transparent 68%);
 }
 .hero__orb--amber {
     width: 440px; height: 440px;
@@ -574,7 +575,7 @@ function selectPlan(openAuth, user) {
     top: 34%; left: 50%;
     width: 760px; height: 420px;
     transform: translate(-50%, -50%);
-    background: radial-gradient(ellipse, rgba(21, 80, 208, 0.5), transparent 70%);
+    background: radial-gradient(ellipse, rgba(27, 117, 188, 0.5), transparent 70%);
     filter: blur(40px);
 }
 @keyframes hero-float {
@@ -672,7 +673,7 @@ function selectPlan(openAuth, user) {
 .hero__stats strong {
     font-size: clamp(1.5rem, 2.6vw, 2rem);
     font-weight: 800;
-    background: linear-gradient(135deg, #fff, #c5d5e9);
+    background: linear-gradient(135deg, #fff, #c4dcef);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -713,7 +714,7 @@ function selectPlan(openAuth, user) {
 .feature:hover {
     transform: translateY(-8px);
     border-color: #dce5f2;
-    box-shadow: 0 34px 60px -24px rgba(24, 81, 173, 0.32);
+    box-shadow: 0 34px 60px -24px rgba(27, 117, 188, 0.32);
 }
 .feature__ic {
     display: inline-flex;
@@ -724,7 +725,7 @@ function selectPlan(openAuth, user) {
     font-size: 1.4rem;
     color: #fff;
     background: linear-gradient(135deg, var(--brand), var(--brand-2));
-    box-shadow: 0 12px 24px -10px rgba(24, 81, 173, 0.6);
+    box-shadow: 0 12px 24px -10px rgba(27, 117, 188, 0.6);
     margin-bottom: 1.25rem;
 }
 .feature h3 { font-size: 1.2rem; font-weight: 750; color: var(--ink); margin: 0 0 0.5rem; }
@@ -737,8 +738,8 @@ function selectPlan(openAuth, user) {
     border-radius: 32px;
     padding: clamp(2rem, 4vw, 3.25rem);
     color: #fff;
-    background: linear-gradient(130deg, #214784 0%, #1d48a5 55%, #1550d0 100%);
-    box-shadow: 0 40px 80px -30px rgba(24, 81, 173, 0.5);
+    background: linear-gradient(130deg, #145a92 0%, #145a92 55%, #1b75bc 100%);
+    box-shadow: 0 40px 80px -30px rgba(27, 117, 188, 0.5);
 }
 .admis__shape {
     position: absolute;
@@ -781,7 +782,7 @@ function selectPlan(openAuth, user) {
     background: linear-gradient(135deg, var(--brand), var(--brand-2));
     border-color: transparent;
     color: #fff;
-    box-shadow: 0 22px 44px -18px rgba(24, 81, 173, 0.6);
+    box-shadow: 0 22px 44px -18px rgba(27, 117, 188, 0.6);
 }
 .step__num {
     position: absolute;
@@ -799,7 +800,7 @@ function selectPlan(openAuth, user) {
     border-radius: 14px;
     font-size: 1.25rem;
     color: var(--brand);
-    background: rgba(24, 81, 173, 0.1);
+    background: rgba(27, 117, 188, 0.1);
     transition: background 0.25s ease, color 0.25s ease;
 }
 .step.is-active .step__ic { background: rgba(255, 255, 255, 0.2); color: #fff; }
@@ -818,7 +819,7 @@ function selectPlan(openAuth, user) {
     justify-content: center;
     padding: 1.75rem;
     border-radius: 22px;
-    background: linear-gradient(160deg, #eef3f9, #f2f5fa);
+    background: linear-gradient(160deg, #e8f2fa, #f2f5fa);
     border: 1px solid #e3eaf4;
 }
 .method-panel__media img { max-width: 190px; width: 100%; height: auto; filter: drop-shadow(0 18px 26px rgba(23, 50, 93, 0.22)); }
@@ -855,7 +856,7 @@ function selectPlan(openAuth, user) {
     box-shadow: 0 18px 40px -24px rgba(15, 23, 42, 0.2);
     transition: transform 0.28s ease, box-shadow 0.28s ease;
 }
-.teacher:hover { transform: translateY(-8px); box-shadow: 0 34px 56px -24px rgba(24, 81, 173, 0.32); }
+.teacher:hover { transform: translateY(-8px); box-shadow: 0 34px 56px -24px rgba(27, 117, 188, 0.32); }
 .teacher__photo {
     position: relative;
     aspect-ratio: 1 / 1;
@@ -879,7 +880,7 @@ function selectPlan(openAuth, user) {
     font-size: 0.78rem;
     font-weight: 700;
     color: var(--brand);
-    background: rgba(24, 81, 173, 0.09);
+    background: rgba(27, 117, 188, 0.09);
     padding: 0.2rem 0.6rem;
     border-radius: 999px;
 }
@@ -891,7 +892,7 @@ function selectPlan(openAuth, user) {
     border-radius: 34px;
     padding: clamp(2rem, 4vw, 3.25rem);
     color: #fff;
-    background: linear-gradient(150deg, #0f172a 0%, #1e293b 60%, #17325d 100%);
+    background: linear-gradient(150deg, #0f172a 0%, #1e293b 60%, #0a3a6e 100%);
     box-shadow: 0 44px 90px -34px rgba(15, 23, 42, 0.55);
 }
 .plan__shape {
@@ -899,7 +900,7 @@ function selectPlan(openAuth, user) {
     bottom: -140px; left: -100px;
     width: 360px; height: 360px;
     border-radius: 50%;
-    background: radial-gradient(circle at 60% 40%, rgba(236, 72, 153, 0.4), transparent 65%);
+    background: radial-gradient(circle at 60% 40%, rgba(245, 179, 1, 0.4), transparent 65%);
 }
 .plan__tag {
     display: inline-flex;
@@ -910,12 +911,12 @@ function selectPlan(openAuth, user) {
     padding: 0.4rem 0.9rem;
     border-radius: 999px;
     color: #fff;
-    background: linear-gradient(135deg, #ec4899, #f43f5e);
+    background: linear-gradient(135deg, #f5b301, #d99a00);
     margin-bottom: 1rem;
 }
 .plan__name { font-size: 1.5rem; font-weight: 800; margin: 0 0 0.75rem; }
 .plan__price { display: flex; align-items: baseline; gap: 0.75rem; }
-.plan__now { font-size: clamp(2.6rem, 5vw, 3.4rem); font-weight: 800; color: #f9a8d4; line-height: 1; }
+.plan__now { font-size: clamp(2.6rem, 5vw, 3.4rem); font-weight: 800; color: #ffe08a; line-height: 1; }
 .plan__now small { font-size: 0.9rem; font-weight: 500; color: #cbd5e1; }
 .plan__note { color: rgba(255, 255, 255, 0.75); font-size: 0.95rem; margin: 0.75rem 0 1.5rem; }
 .plan__safe { font-size: 0.78rem; color: rgba(255, 255, 255, 0.55); margin: 0.9rem 0 0; }
@@ -935,7 +936,7 @@ function selectPlan(openAuth, user) {
     font-size: 0.92rem;
     color: #e2e8f0;
 }
-.plan__list li i { color: #f472b6; }
+.plan__list li i { color: #ffd34d; }
 
 .guarantee {
     display: flex;

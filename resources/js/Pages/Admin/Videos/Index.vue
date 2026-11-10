@@ -134,10 +134,10 @@ function onChange(pag) { reload({ page: pag.current }); }
 
 const columns = [
     { title: 'Título', dataIndex: 'titulo', key: 'titulo' },
-    { title: 'Materia', dataIndex: 'materia', key: 'materia', width: 200 },
-    { title: 'Tema', dataIndex: 'tema', key: 'tema', width: 190 },
-    { title: 'Visibilidad', key: 'plan', width: 140, align: 'center' },
-    { title: 'Duración', dataIndex: 'duracion', key: 'duracion', width: 110, align: 'center' },
+    { title: 'Materia', dataIndex: 'materia', key: 'materia', width: 170, ellipsis: true },
+    { title: 'Tema', dataIndex: 'tema', key: 'tema', width: 170, ellipsis: true, responsive: ['xl'] },
+    { title: 'Visibilidad', key: 'plan', width: 120, align: 'center' },
+    { title: 'Duración', dataIndex: 'duracion', key: 'duracion', width: 100, align: 'center', responsive: ['lg'] },
     { title: '', key: 'acciones', width: 100, align: 'right' },
 ];
 </script>
@@ -159,7 +159,7 @@ const columns = [
 
         <a-card :bordered="false" :body-style="{ padding: '4px 4px 12px' }">
             <a-table class="filtered-table" :columns="columns" :data-source="videos.data" :pagination="pagination"
-                row-key="id" size="middle" :scroll="{ x: 1040 }" @change="onChange">
+                row-key="id" size="middle" :scroll="{ x: 680 }" @change="onChange">
                 <template #emptyText><a-empty description="Sin videos" /></template>
 
                 <template #summary>
@@ -271,7 +271,7 @@ const columns = [
     position: relative; flex: none; width: 58px; height: 34px; border-radius: 8px; overflow: hidden;
     border: 0; padding: 0; cursor: pointer;
     display: flex; align-items: center; justify-content: center;
-    background: linear-gradient(135deg, #1664db, #3469eb); color: #fff;
+    background: linear-gradient(135deg, #2a8ad6, #2a8ad6); color: #fff;
 }
 .vid-row__thumb img { width: 100%; height: 100%; object-fit: cover; }
 .vid-row__play {

@@ -1,5 +1,6 @@
 <script setup>
 import { reactive, ref, onMounted, computed } from 'vue';
+import { urlApp } from '@/utils/urlApp';
 import { router } from '@inertiajs/vue3';
 import axios from 'axios';
 import {
@@ -24,7 +25,7 @@ const props = defineProps({
         type: Object,
         default: () => ({
             tipo: 'video',
-            src: '/videos/DOCUMENTOS_SAINS.mp4',
+            src: urlApp('/videos/DOCUMENTOS_SAINS.mp4'),
         }),
     },
 });
@@ -573,8 +574,8 @@ const err = (bag, k) => (bag && bag[k] ? bag[k][0] : '');
     color: #fff;
     background:
         radial-gradient(circle at 92% -30%, rgba(245, 179, 1, .35), transparent 45%),
-        linear-gradient(120deg, #0e2d66 0%, #1851ad 70%, #1d63c9 100%);
-    box-shadow: 0 22px 44px -26px rgba(14, 45, 102, .7);
+        linear-gradient(120deg, #0a3a6e 0%, #1b75bc 70%, #1b75bc 100%);
+    box-shadow: 0 22px 44px -26px rgba(10, 58, 110, .7);
 }
 .pf-hero__foto { position: relative; flex: none; }
 .pf-hero__avatar {
@@ -587,7 +588,7 @@ const err = (bag, k) => (bag && bag[k] ? bag[k][0] : '');
     position: absolute; right: -2px; bottom: -2px;
     width: 32px; height: 32px; border-radius: 50%;
     display: grid; place-items: center;
-    border: 3px solid #1851ad; background: #f5b301; color: #0e2d66;
+    border: 3px solid #1b75bc; background: #f5b301; color: #0a3a6e;
     font-size: 14px; cursor: pointer; transition: transform .15s ease;
 }
 .pf-hero__cam:hover { transform: scale(1.1); }
@@ -600,11 +601,11 @@ const err = (bag, k) => (bag && bag[k] ? bag[k][0] : '');
     padding: 3px 11px; border-radius: 999px; font-size: 12px; font-weight: 600;
     background: rgba(255, 255, 255, .15); border: 1px solid rgba(255, 255, 255, .22);
 }
-.pf-chip--gold { background: #f5b301; border-color: #f5b301; color: #0e2d66; }
+.pf-chip--gold { background: #f5b301; border-color: #f5b301; color: #0a3a6e; }
 .pf-hero__quitar { color: rgba(255, 255, 255, .7); font-size: 12px; text-decoration: underline; cursor: pointer; }
 .pf-hero__quitar:hover { color: #fff; }
 .pf-hero__side { flex: none; display: flex; align-items: center; gap: 14px; }
-.pf-hero__cont { background: #fff !important; color: #0e2d66 !important; border: 0 !important; font-weight: 700; }
+.pf-hero__cont { background: #fff !important; color: #0a3a6e !important; border: 0 !important; font-weight: 700; }
 
 /* ==================== Rejilla ==================== */
 .pf-grid { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 16px; align-items: start; }
@@ -627,16 +628,16 @@ const err = (bag, k) => (bag && bag[k] ? bag[k][0] : '');
 /* ==================== Documentos ==================== */
 .pf-docs__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
 .pf-docs__head h3 { margin: 0; font-size: 15px; font-weight: 700; display: flex; gap: 8px; align-items: center; }
-.pf-docs__count { font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 999px; background: #eef3f9; color: var(--sains-primary); }
+.pf-docs__count { font-size: 12px; font-weight: 700; padding: 2px 10px; border-radius: 999px; background: #e8f2fa; color: var(--sains-primary); }
 .pf-docs__count.ok { background: #dcfce7; color: #15803d; }
 
 .video-cta {
     display: flex; align-items: center; gap: 12px; width: 100%;
     padding: 9px 12px; margin-bottom: 10px; border-radius: 12px; cursor: pointer; text-align: left;
-    border: 1px solid #c5d5e9; background: linear-gradient(135deg, #eef3f9, #fff);
+    border: 1px solid #c4dcef; background: linear-gradient(135deg, #e8f2fa, #fff);
     transition: border-color .15s ease, box-shadow .15s ease;
 }
-.video-cta:hover { border-color: var(--sains-primary); box-shadow: 0 6px 16px -10px rgba(24, 81, 173, .5); }
+.video-cta:hover { border-color: var(--sains-primary); box-shadow: 0 6px 16px -10px rgba(27, 117, 188, .5); }
 .video-cta__ic { font-size: 30px; color: var(--sains-gold, #f5b301); }
 .video-cta b { display: block; font-size: 13px; color: #0f172a; }
 .video-cta small { font-size: 11.5px; color: #64748b; }
@@ -681,11 +682,11 @@ const err = (bag, k) => (bag && bag[k] ? bag[k][0] : '');
 
 /* Ver (ojito) */
 .doc-btn--ver {
-    background: #e8f0fe; color: #1851ad; border-color: #cddffb;
+    background: #e8f2fa; color: #1b75bc; border-color: #c4dcef;
 }
 .doc-btn--ver:hover {
-    background: #1851ad; color: #fff; border-color: #1851ad;
-    box-shadow: 0 4px 12px -4px rgba(24, 81, 173, .55);
+    background: #1b75bc; color: #fff; border-color: #1b75bc;
+    box-shadow: 0 4px 12px -4px rgba(27, 117, 188, .55);
 }
 
 /* Reemplazar */
@@ -711,7 +712,7 @@ const err = (bag, k) => (bag && bag[k] ? bag[k][0] : '');
     padding: 0;
     border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 30px 60px -20px rgba(14, 45, 102, .45);
+    box-shadow: 0 30px 60px -20px rgba(10, 58, 110, .45);
 }
 .video-modal :deep(.ant-modal-body) {
     padding: 0;
@@ -724,7 +725,7 @@ const err = (bag, k) => (bag && bag[k] ? bag[k][0] : '');
     justify-content: space-between;
     gap: 14px;
     padding: 16px 18px;
-    background: linear-gradient(120deg, #0e2d66 0%, #1851ad 70%, #1d63c9 100%);
+    background: linear-gradient(120deg, #0a3a6e 0%, #1b75bc 70%, #1b75bc 100%);
     color: #fff;
 }
 .vm-head__left {
@@ -741,7 +742,7 @@ const err = (bag, k) => (bag && bag[k] ? bag[k][0] : '');
     display: grid;
     place-items: center;
     background: #f5b301;
-    color: #0e2d66;
+    color: #0a3a6e;
     font-size: 22px;
     box-shadow: 0 6px 14px -6px rgba(245, 179, 1, .6);
 }
@@ -818,7 +819,7 @@ const err = (bag, k) => (bag && bag[k] ? bag[k][0] : '');
     font-weight: 600;
 }
 .vm-tip :deep(.anticon) {
-    color: #1851ad;
+    color: #1b75bc;
 }
 
 /* ==================== Responsive ==================== */

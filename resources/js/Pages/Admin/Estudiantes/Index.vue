@@ -69,11 +69,10 @@ function onChange(pag) { reload({ page: pag.current }); }
 
 const columns = [
     { title: 'Estudiante', key: 'nombre' },
-    { title: 'CURP', key: 'curp', width: 220 },
-    { title: 'Documentos', key: 'documentos', width: 200, align: 'center' },
-    { title: 'Plan', key: 'plan', width: 120 },
-    { title: 'Fecha de registro', key: 'registro', width: 230, align: 'center' },
-    { title: '', key: 'acciones', width: 130, align: 'right' },
+    { title: 'Documentos', key: 'documentos', width: 170, align: 'center' },
+    { title: 'Plan', key: 'plan', width: 130 },
+    { title: 'Registro', key: 'registro', width: 150, align: 'center', responsive: ['lg'] },
+    { title: '', key: 'acciones', width: 120, align: 'right' },
 ];
 </script>
 
@@ -98,7 +97,7 @@ const columns = [
         </div>
 
         <a-card :bordered="false">
-            <a-table class="filtered-table" :columns="columns" :data-source="estudiantes.data" :pagination="pagination" row-key="id" size="middle" :scroll="{ x: 1400 }" @change="onChange">
+            <a-table class="filtered-table" :columns="columns" :data-source="estudiantes.data" :pagination="pagination" row-key="id" size="middle" :scroll="{ x: 700 }" @change="onChange">
                 <template #summary>
                     <a-table-summary-row>
                         <a-table-summary-cell v-for="(col, i) in columns" :key="col.key ?? i" :index="i">
@@ -121,9 +120,9 @@ const columns = [
                 <template #bodyCell="{ column, record }">
                     <template v-if="column.key === 'nombre'">
                         <div style="font-weight:600">{{ record.nombre_completo }}</div>
+                        <div v-if="record.curp" class="sains-faint" style="font-size:12px;letter-spacing:.02em">{{ record.curp }}</div>
                         <a-tag v-if="record.sin_perfil" color="orange" style="margin-top:2px">Perfil incompleto</a-tag>
                     </template>
-                    <template v-else-if="column.key === 'curp'">{{ record.curp }}</template>
                     <template v-else-if="column.key === 'registro'">{{ fecha(record.fecha_registro) }}</template>
                     <template v-else-if="column.key === 'documentos'">
                         <a-tooltip :title="record.documentos_estado?.detalle">

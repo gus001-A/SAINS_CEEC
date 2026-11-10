@@ -103,12 +103,12 @@ const pagination = computed(() => ({
 function onChange(pag) { reload({ page: pag.current }); }
 
 const columns = [
-    { title: 'Referencia', key: 'ref', width: 210 },
-    { title: 'Estudiante', dataIndex: 'alumno', key: 'alumno', width: 200 },
-    { title: 'Monto', dataIndex: 'monto', key: 'monto', width: 110, align: 'right' },
-    { title: 'Método', dataIndex: 'tipo_pago', key: 'tipo', width: 130 },
-    { title: 'Estado', dataIndex: 'estatus', key: 'estatus', width: 130 },
-    { title: 'Fecha y hora', dataIndex: 'fecha_pago', key: 'fecha', width: 150 },
+    { title: 'Referencia', key: 'ref', width: 170, ellipsis: true },
+    { title: 'Estudiante', dataIndex: 'alumno', key: 'alumno', width: 190, ellipsis: true },
+    { title: 'Monto', dataIndex: 'monto', key: 'monto', width: 100, align: 'right' },
+    { title: 'Método', dataIndex: 'tipo_pago', key: 'tipo', width: 120, responsive: ['xl'] },
+    { title: 'Estado', dataIndex: 'estatus', key: 'estatus', width: 120 },
+    { title: 'Fecha y hora', dataIndex: 'fecha_pago', key: 'fecha', width: 130, responsive: ['lg'] },
     { title: 'Acciones', key: 'acciones', width: 240, align: 'right' },
 ];
 </script>
@@ -130,7 +130,7 @@ const columns = [
         </div>
 
         <a-card :bordered="false">
-            <a-table class="filtered-table" :columns="columns" :data-source="pagos.data" :pagination="pagination" row-key="id" size="middle" :scroll="{ x: 1090 }" @change="onChange">
+            <a-table class="filtered-table" :columns="columns" :data-source="pagos.data" :pagination="pagination" row-key="id" size="middle" :scroll="{ x: 830 }" @change="onChange">
                 <template #summary>
                     <a-table-summary-row>
                         <a-table-summary-cell v-for="(col, i) in columns" :key="col.key ?? i" :index="i">
@@ -279,5 +279,5 @@ const columns = [
     font-size: 11.5px; padding: 5px 10px; border-radius: 999px; cursor: pointer;
     transition: all .12s ease; text-align: left;
 }
-.rj-chip:hover { border-color: #c5d5e9; background: #eef3f9; color: #214784; }
+.rj-chip:hover { border-color: #c4dcef; background: #e8f2fa; color: #145a92; }
 </style>

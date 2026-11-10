@@ -25,7 +25,7 @@
         }
 
         .border {
-            border: 3px solid #1851ad;
+            border: 3px solid #1b75bc;
             padding: 3px;
         }
         .border-inner {
@@ -41,7 +41,7 @@
             font-weight: 700;
             letter-spacing: 3px;
             text-transform: uppercase;
-            color: #1851ad;
+            color: #1b75bc;
             margin-bottom: 18px;
         }
 

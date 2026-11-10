@@ -186,9 +186,9 @@ function onChange(pag) { reload({ page: pag.current }); }
 
 const columns = [
     { title: 'Pregunta', key: 'pregunta' },
-    { title: 'Respuesta correcta', dataIndex: 'respuesta_correcta', key: 'correcta', width: 200 },
+    { title: 'Respuesta correcta', dataIndex: 'respuesta_correcta', key: 'correcta', width: 200, ellipsis: true, responsive: ['lg'] },
     { title: 'Opciones', key: 'numOpciones', width: 90, align: 'center' },
-    { title: 'Justif.', key: 'justif', width: 90, align: 'center' },
+    { title: 'Justif.', key: 'justif', width: 90, align: 'center', responsive: ['xl'] },
     { title: '', key: 'acciones', width: 100, align: 'right' },
 ];
 </script>
@@ -217,7 +217,7 @@ const columns = [
         </div>
 
         <a-card :bordered="false">
-            <a-table class="filtered-table" :columns="columns" :data-source="preguntas.data" :pagination="pagination" row-key="id" size="middle" :scroll="{ x: 810 }" @change="onChange">
+            <a-table class="filtered-table" :columns="columns" :data-source="preguntas.data" :pagination="pagination" row-key="id" size="middle" :scroll="{ x: 560 }" @change="onChange">
                 <template #summary>
                     <a-table-summary-row>
                         <a-table-summary-cell v-for="(col, i) in columns" :key="col.key ?? i" :index="i">
@@ -415,7 +415,7 @@ const columns = [
 .imp-steps { margin: 4px 0 18px; }
 .imp-tpl {
     display: flex; align-items: center; justify-content: space-between; gap: 12px;
-    margin-top: 14px; padding: 12px 14px; border-radius: 12px; background: #eef3f9; border: 1px solid #c5d5e9;
+    margin-top: 14px; padding: 12px 14px; border-radius: 12px; background: #e8f2fa; border: 1px solid #c4dcef;
 }
 .imp-tpl b { display: block; font-size: 13px; color: #0f172a; }
 .imp-tpl span { font-size: 12.5px; color: #475569; }
@@ -430,9 +430,9 @@ const columns = [
 }
 .imp-card b { font-size: 20px; line-height: 1.1; color: #0f172a; }
 .imp-card span { font-size: 12px; color: #64748b; font-weight: 600; }
-.imp-card.on { border-color: var(--sains-primary); box-shadow: 0 0 0 3px rgba(24, 81, 173, .12); }
+.imp-card.on { border-color: var(--sains-primary); box-shadow: 0 0 0 3px rgba(27, 117, 188, .12); }
 .imp-card.is-nueva b { color: #16a34a; }
-.imp-card.is-actualiza b { color: #1851ad; }
+.imp-card.is-actualiza b { color: #1b75bc; }
 .imp-card.is-duplicada b { color: #d99a00; }
 .imp-card.is-error b { color: #dc2626; }
 .imp-q { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }

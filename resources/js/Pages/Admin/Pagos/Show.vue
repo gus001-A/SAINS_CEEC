@@ -199,9 +199,9 @@ function rechazar() {
     padding-bottom: 12px; margin-bottom: 4px;
     border-bottom: 1px solid var(--sains-line);
 }
-.pcard__title :deep(.anticon) { color: #1851ad; }
+.pcard__title :deep(.anticon) { color: #1b75bc; }
 .pcard__link {
-    margin-left: auto; font-size: 12.5px; font-weight: 600; color: #1851ad;
+    margin-left: auto; font-size: 12.5px; font-weight: 600; color: #1b75bc;
     display: inline-flex; align-items: center; gap: 4px;
 }
 .pcard__link :deep(.anticon) { color: inherit; }
@@ -232,7 +232,7 @@ function rechazar() {
     width: 46px; height: 46px; flex: none; border-radius: 13px;
     display: flex; align-items: center; justify-content: center;
     font-weight: 700; font-size: 16px; color: #fff;
-    background: linear-gradient(135deg, #1851ad, #1751df);
+    background: linear-gradient(135deg, #1b75bc, #1b75bc);
 }
 .stu__meta { display: flex; flex-direction: column; min-width: 0; }
 .stu__name { font-weight: 700; font-size: 14.5px; color: #0f172a; }
@@ -256,7 +256,7 @@ function rechazar() {
     border-radius: 12px; border: 1px dashed #cbd5e1; background: #f8fafc;
     text-align: center; text-decoration: none;
 }
-.pay__proof-pdf { border-color: #c5d5e9; }
+.pay__proof-pdf { border-color: #c4dcef; }
 .pay__proof-pdf :deep(.anticon) { font-size: 34px; color: #ef4444; }
 .pay__proof-pdf span { font-weight: 700; color: #0f172a; font-size: 14px; }
 .pay__proof-pdf small { font-size: 12px; color: var(--sains-muted); }

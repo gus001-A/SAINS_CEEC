@@ -86,15 +86,15 @@ defineEmits(['edit', 'delete']);
 
 /* Color al pasar el cursor (reposo neutro, color en hover) */
 .row-actions__btn.is-view:hover { background: #0ea5e9; color: #fff; box-shadow: 0 8px 16px -6px rgba(14, 165, 233, .55); }
-.row-actions__btn.is-edit:hover { background: #1851ad; color: #fff; box-shadow: 0 8px 16px -6px rgba(24, 81, 173, .55); }
+.row-actions__btn.is-edit:hover { background: #1b75bc; color: #fff; box-shadow: 0 8px 16px -6px rgba(27, 117, 188, .55); }
 .row-actions__btn.is-delete:hover { background: #dc2626; color: #fff; box-shadow: 0 8px 16px -6px rgba(220, 38, 38, .55); }
 .row-actions__btn.is-copy:hover { background: #d97706; color: #fff; box-shadow: 0 8px 16px -6px rgba(217, 119, 6, .55); }
 .row-actions__btn.is-ok:hover { background: #16a34a; color: #fff; box-shadow: 0 8px 16px -6px rgba(22, 163, 74, .55); }
 .row-actions__btn.is-no:hover { background: #dc2626; color: #fff; box-shadow: 0 8px 16px -6px rgba(220, 38, 38, .55); }
 
 /* Tinte de reposo sutil por tipo */
-.row-actions__btn.is-view { color: #0284c7; }
-.row-actions__btn.is-edit { color: #1851ad; }
+.row-actions__btn.is-view { color: #1b75bc; }
+.row-actions__btn.is-edit { color: #1b75bc; }
 .row-actions__btn.is-delete { color: #dc2626; }
 .row-actions__btn.is-copy { color: #b45309; }
 .row-actions__btn.is-ok { color: #16a34a; }

@@ -19,7 +19,7 @@
 
         /* ===== Encabezado ===== */
         .brandbar {
-            background: #1851ad;
+            background: #1b75bc;
             color: #ffffff;
             padding: 22px 34px;
         }
@@ -42,7 +42,7 @@
             margin-bottom: 20px;
         }
         .profile .name { font-size: 16px; font-weight: 700; color: #17325d; }
-        .profile .curp { font-size: 10px; color: #1664db; margin: 3px 0 9px; }
+        .profile .curp { font-size: 10px; color: #2a8ad6; margin: 3px 0 9px; }
 
         /* ===== Secciones ===== */
         .section { margin-bottom: 22px; page-break-inside: avoid; }
@@ -52,7 +52,7 @@
             color: #17325d;
             letter-spacing: 0.5px;
             padding: 0 0 6px 10px;
-            border-left: 3px solid #1851ad;
+            border-left: 3px solid #1b75bc;
             margin-bottom: 10px;
         }
 
@@ -78,7 +78,7 @@
         /* ===== Tabla de documentos ===== */
         table.docs { width: 100%; border-collapse: collapse; }
         table.docs th {
-            background: #1851ad;
+            background: #1b75bc;
             color: #ffffff;
             padding: 8px 10px;
             text-align: left;

@@ -78,8 +78,8 @@ function onChange(pag) { reload({ page: pag.current }); }
 const sexoOpts = [{ value: 'M', label: 'Masculino' }, { value: 'F', label: 'Femenino' }];
 const columns = [
     { title: 'Nombre', key: 'nombre' },
-    { title: 'Correo', dataIndex: 'correo', key: 'correo', width: 260 },
-    { title: 'Sexo', dataIndex: 'sexo', key: 'sexo', width: 140 },
+    { title: 'Correo', dataIndex: 'correo', key: 'correo', width: 260, ellipsis: true },
+    { title: 'Sexo', dataIndex: 'sexo', key: 'sexo', width: 120, responsive: ['lg'] },
     { title: '', key: 'acciones', width: 100, align: 'right' },
 ];
 </script>
@@ -93,7 +93,7 @@ const columns = [
         </PageHead>
 
         <a-card :bordered="false" :body-style="{ padding: '4px 4px 12px' }">
-            <a-table class="filtered-table" :columns="columns" :data-source="admins.data" :pagination="pagination" row-key="id" size="middle" :scroll="{ x: 800 }" @change="onChange">
+            <a-table class="filtered-table" :columns="columns" :data-source="admins.data" :pagination="pagination" row-key="id" size="middle" :scroll="{ x: 580 }" @change="onChange">
                 <template #summary>
                     <a-table-summary-row>
                         <a-table-summary-cell v-for="(col, i) in columns" :key="col.key ?? i" :index="i">

@@ -399,7 +399,7 @@ function irAExamenFinal() {
 
 .hero-up {
     background: #fff !important; border-color: #fff !important;
-    color: #1851ad !important; font-weight: 650;
+    color: #1b75bc !important; font-weight: 650;
 }
 .hero-up:hover { background: #eef2f8 !important; }
 
@@ -413,8 +413,8 @@ function irAExamenFinal() {
     transition: box-shadow .2s ease, border-color .2s ease;
 }
 .asigs :deep(.ant-collapse-item-active) {
-    box-shadow: 0 12px 32px -16px rgba(24, 81, 173, .32);
-    border-color: #c5d5e9 !important;
+    box-shadow: 0 12px 32px -16px rgba(27, 117, 188, .32);
+    border-color: #c4dcef !important;
 }
 .asigs :deep(.ant-collapse-header) { padding: 14px 16px !important; align-items: center !important; }
 .asigs :deep(.ant-collapse-content-box) { padding: 4px 14px 16px !important; }
@@ -423,11 +423,11 @@ function irAExamenFinal() {
 .asig-head__ico {
     width: 40px; height: 40px; border-radius: 12px; flex: none;
     display: flex; align-items: center; justify-content: center;
-    background: linear-gradient(135deg, #eef3f9, #e0e8f3); color: #1851ad; font-size: 16px;
+    background: linear-gradient(135deg, #e8f2fa, #e0e8f3); color: #1b75bc; font-size: 16px;
     transition: background .2s ease, color .2s ease, transform .2s ease;
 }
 .asig-head.is-open .asig-head__ico {
-    background: linear-gradient(135deg, #1664db, #1851ad); color: #fff; transform: scale(1.05);
+    background: linear-gradient(135deg, #2a8ad6, #1b75bc); color: #fff; transform: scale(1.05);
 }
 .asig-head__txt { flex: 1; display: flex; flex-direction: column; line-height: 1.3; min-width: 0; }
 .asig-head__txt b { font-size: 14.5px; color: #0f172a; }
@@ -441,15 +441,15 @@ function irAExamenFinal() {
 .asig-head__ring { position: relative; width: 44px; height: 44px; flex: none; }
 .asig-head__ring svg { width: 44px; height: 44px; transform: rotate(-90deg); }
 .asig-head__ring circle { fill: none; stroke-width: 4; }
-.asig-head__ring circle.bg { stroke: #eef3f9; }
+.asig-head__ring circle.bg { stroke: #e8f2fa; }
 .asig-head__ring circle.fg {
-    stroke: #1664db; stroke-linecap: round;
+    stroke: #2a8ad6; stroke-linecap: round;
     transition: stroke-dasharray .5s cubic-bezier(.16, 1, .3, 1);
 }
 .asig-head__ring.full circle.fg { stroke: #16a34a; }
 .asig-head__ring span {
     position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
-    font-size: 11px; font-weight: 800; color: #214784; letter-spacing: -.03em;
+    font-size: 11px; font-weight: 800; color: #145a92; letter-spacing: -.03em;
 }
 .asig-head__ring.full span { color: #15803d; }
 .asig-head__ring span i { font-size: 7px; font-style: normal; font-weight: 700; margin-left: 1px; }
@@ -459,20 +459,20 @@ function irAExamenFinal() {
     border: 0; cursor: pointer;
     padding: 7px 14px; border-radius: 999px;
     font-size: 12.5px; font-weight: 650; color: #fff;
-    background: linear-gradient(135deg, #f59e0b, #ec4899);
-    box-shadow: 0 8px 18px -8px rgba(236, 72, 153, .55);
+    background: linear-gradient(135deg, #f59e0b, #f5b301);
+    box-shadow: 0 8px 18px -8px rgba(245, 179, 1, .55);
     transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
     white-space: nowrap;
 }
 .asig-examen .anticon { font-size: 13px; }
-.asig-examen:hover { transform: translateY(-1px); box-shadow: 0 12px 24px -8px rgba(236, 72, 153, .6); filter: brightness(1.03); }
+.asig-examen:hover { transform: translateY(-1px); box-shadow: 0 12px 24px -8px rgba(245, 179, 1, .6); filter: brightness(1.03); }
 @media (max-width: 560px) { .asig-examen span { display: none; } .asig-examen { padding: 8px; } }
 
 /* ================== Examen final ================== */
 .examen-final {
     display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
     margin: 20px 0 8px; padding: 20px 22px; border-radius: 18px;
-    background: linear-gradient(135deg, #0d1d36 0%, #16326f 60%, #831843 100%);
+    background: linear-gradient(135deg, #0d1d36 0%, #0a3a6e 60%, #7a5600 100%);
     color: #fff;
 }
 .examen-final__ico {
@@ -484,7 +484,7 @@ function irAExamenFinal() {
 .examen-final__txt b { font-size: 16px; }
 .examen-final__txt small { font-size: 12.5px; color: rgba(255, 255, 255, .78); }
 .examen-final__btn {
-    background: #fff !important; border-color: #fff !important; color: #16326f !important; font-weight: 700;
+    background: #fff !important; border-color: #fff !important; color: #0a3a6e !important; font-weight: 700;
 }
 .examen-final__btn:hover:not(:disabled) { background: #f2f5fa !important; border-color: #f2f5fa !important; }
 .examen-final__btn:disabled { background: rgba(255, 255, 255, .25) !important; border-color: transparent !important; color: rgba(255, 255, 255, .7) !important; }
@@ -502,10 +502,10 @@ function irAExamenFinal() {
     background: #fff; border: 1px solid var(--sains-line); border-radius: 16px;
     transition: transform .18s cubic-bezier(.16,1,.3,1), box-shadow .18s ease, border-color .18s ease;
 }
-.clase-card:hover { transform: translateY(-4px); box-shadow: 0 16px 34px -18px rgba(15, 23, 42, .28); border-color: #c5d5e9; }
+.clase-card:hover { transform: translateY(-4px); box-shadow: 0 16px 34px -18px rgba(15, 23, 42, .28); border-color: #c4dcef; }
 .clase-card.done { border-color: #86efac; background: #f0fdf4; }
 .clase-card__thumb {
-    position: relative; aspect-ratio: 16 / 9; background: linear-gradient(135deg, #1664db, #3469eb);
+    position: relative; aspect-ratio: 16 / 9; background: linear-gradient(135deg, #2a8ad6, #2a8ad6);
     display: block; overflow: hidden;
 }
 .clase-card__thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .3s ease; }
@@ -554,7 +554,7 @@ function irAExamenFinal() {
 
 .preview-banner {
     display: flex; align-items: center; justify-content: center; gap: 8px;
-    background: linear-gradient(135deg, #f59e0b, #ec4899); color: #fff;
+    background: linear-gradient(135deg, #f59e0b, #f5b301); color: #fff;
     font-size: 13px; font-weight: 600; padding: 8px 14px; border-radius: 10px; margin-bottom: 12px;
 }
 .preview-banner b { font-variant-numeric: tabular-nums; }
@@ -563,7 +563,7 @@ function irAExamenFinal() {
     position: absolute; inset: 0; z-index: 2;
     display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;
     gap: 12px; padding: 28px;
-    background: linear-gradient(160deg, #0d1d36 0%, #16326f 60%, #831843 100%);
+    background: linear-gradient(160deg, #0d1d36 0%, #0a3a6e 60%, #7a5600 100%);
     color: #fff;
 }
 .paywall__ic {
@@ -572,6 +572,6 @@ function irAExamenFinal() {
 }
 .paywall h3 { font-size: 18px; font-weight: 800; line-height: 1.3; max-width: 460px; margin: 0; }
 .paywall p { font-size: 13px; color: rgba(255, 255, 255, .8); max-width: 420px; margin: 0; line-height: 1.5; }
-.paywall .ant-btn { margin-top: 6px; background: #fff; border-color: #fff; color: #16326f; font-weight: 700; }
-.paywall .ant-btn:hover { background: #f2f5fa; border-color: #f2f5fa; color: #16326f; }
+.paywall .ant-btn { margin-top: 6px; background: #fff; border-color: #fff; color: #0a3a6e; font-weight: 700; }
+.paywall .ant-btn:hover { background: #f2f5fa; border-color: #f2f5fa; color: #0a3a6e; }
 </style>

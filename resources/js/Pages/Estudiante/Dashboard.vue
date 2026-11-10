@@ -1,5 +1,6 @@
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue';
+import { urlApp } from '@/utils/urlApp';
 import { Link, router, usePage } from '@inertiajs/vue3';
 import axios from 'axios';
 import {
@@ -47,9 +48,9 @@ const avance = computed(() => Math.round(stats.value.progreso ?? 0));
 onMounted(async () => {
     try {
         const [s, u, t] = await Promise.allSettled([
-            axios.get('/estudiante/api/estadisticas'),
-            axios.get('/estudiante/api/ultimos-examenes'),
-            axios.get('/estudiante/api/tiempo-estudio'),
+            axios.get(urlApp('/estudiante/api/estadisticas')),
+            axios.get(urlApp('/estudiante/api/ultimos-examenes')),
+            axios.get(urlApp('/estudiante/api/tiempo-estudio')),
         ]);
         if (s.status === 'fulfilled') stats.value = s.value.data;
         if (u.status === 'fulfilled') ultimos.value = u.value.data.examenes ?? [];
@@ -57,15 +58,15 @@ onMounted(async () => {
     } finally {
         loading.value = false;
     }
-    axios.post('/estudiante/heartbeat').catch(() => {});
-    hb = setInterval(() => axios.post('/estudiante/heartbeat').catch(() => {}), 60000);
+    axios.post(urlApp('/estudiante/heartbeat')).catch(() => {});
+    hb = setInterval(() => axios.post(urlApp('/estudiante/heartbeat')).catch(() => {}), 60000);
 });
 
 onBeforeUnmount(() => clearInterval(hb));
 
 const accesos = [
-    { title: 'Clases', desc: 'Videos y material por materia', icon: CrownOutlined, color: '#ec4899', route: 'estudiante.clases-premium' },
-    { title: 'Simulador', desc: 'Examen de prueba de 50, 150 o 250', icon: RocketOutlined, color: '#1851ad', route: 'estudiante.simulador' },
+    { title: 'Clases', desc: 'Videos y material por materia', icon: CrownOutlined, color: '#f5b301', route: 'estudiante.clases-premium' },
+    { title: 'Simulador', desc: 'Examen de prueba de 50, 150 o 250', icon: RocketOutlined, color: '#1b75bc', route: 'estudiante.simulador' },
     { title: 'Mis exámenes', desc: 'Historial y resultados', icon: FileTextOutlined, color: '#0ea5e9', route: 'estudiante.examenes' },
 ];
 </script>
@@ -176,7 +177,7 @@ const accesos = [
                             <a-progress
                                 :percent="porcentajeDocumentos"
                                 :status="porcentajeDocumentos >= 100 ? 'success' : 'active'"
-                                :stroke-color="{ from: '#1664db', to: '#ec4899' }"
+                                :stroke-color="{ from: '#2a8ad6', to: '#f5b301' }"
                             />
                             <a-typography-text type="secondary" v-if="!sinDocumentos">
                                 <template v-if="documentos.total_pendientes">{{ documentos.total_pendientes }} en revisión</template>
@@ -219,7 +220,7 @@ const accesos = [
 .hero-cta { display: flex; gap: 10px; margin-top: 18px; flex-wrap: wrap; }
 .hero-cta :deep(.ant-btn-background-ghost) { border-color: rgba(255,255,255,.6); color: #fff; }
 .hero-cta :deep(.ant-btn-background-ghost:hover) { border-color: #fff; color: #fff; background: rgba(255,255,255,.12); }
-.hero-cta__up { background: #fff !important; border-color: #fff !important; color: #1851ad !important; font-weight: 650; }
+.hero-cta__up { background: #fff !important; border-color: #fff !important; color: #1b75bc !important; font-weight: 650; }
 .hero-cta__up:hover { background: #eef2f8 !important; }
 
 .faltan-datos { margin-bottom: 16px; border-radius: 12px; }
@@ -240,7 +241,7 @@ const accesos = [
 .quick-card__body b { font-size: 14.5px; color: #0f172a; }
 .quick-card__body small { color: #64748b; }
 .quick-card__arrow { color: #cbd5e1; transition: transform .18s ease, color .18s ease; }
-.quick-card:hover .quick-card__arrow { color: #1851ad; transform: translateX(3px); }
+.quick-card:hover .quick-card__arrow { color: #1b75bc; transform: translateX(3px); }
 
 .exam-dot {
     width: 40px; height: 40px; border-radius: 12px; display: flex; align-items: center; justify-content: center;

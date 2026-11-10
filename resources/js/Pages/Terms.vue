@@ -107,7 +107,7 @@ import PublicLayout from '@/Layouts/PublicLayout.vue';
 
 <style scoped>
 .terms-hero {
-    background: linear-gradient(135deg, #0b2c6e 0%, #135fc5 100%);
+    background: linear-gradient(135deg, #0a3a6e 0%, #1b75bc 100%);
     color: #fff;
     padding: 140px 0 60px;
 }
@@ -144,7 +144,7 @@ import PublicLayout from '@/Layouts/PublicLayout.vue';
     font-weight: 700;
     font-size: 1.15rem;
     margin: 1.75rem 0 0.5rem;
-    color: #0b2c6e;
+    color: #0a3a6e;
 }
 
 .terms-doc p,

@@ -113,11 +113,11 @@ const seg = computed(() => ({
 /* ---- Exámenes ---- */
 const tipoMeta = (t) => {
     const k = String(t || '').toLowerCase();
-    if (k.includes('materia')) return { color: '#135fbc', bg: '#f2f6fa', label: 'Por materia' };
+    if (k.includes('materia')) return { color: '#2a8ad6', bg: '#f2f6fa', label: 'Por materia' };
     if (k.includes('curso')) return { color: '#16a34a', bg: '#f0fdf4', label: 'Por curso' };
     if (k.includes('simula')) return { color: '#dc2626', bg: '#fef2f2', label: 'Simulación' };
     if (k.includes('certific')) return { color: '#b45309', bg: '#fffbeb', label: 'Certificado' };
-    return { color: '#1550d0', bg: '#f2f5fa', label: t ? (t[0].toUpperCase() + t.slice(1)) : 'Examen' };
+    return { color: '#1b75bc', bg: '#f2f5fa', label: t ? (t[0].toUpperCase() + t.slice(1)) : 'Examen' };
 };
 const califColor = (n) => (n >= 80 ? '#16a34a' : n >= 60 ? '#f59e0b' : '#dc2626');
 const examColumns = [
@@ -377,7 +377,7 @@ onMounted(cargarDocumentos);
                         <div class="card__title">Progreso de videos</div>
                         <div class="vp">
                             <a-progress type="circle" :percent="stats.porcentaje_progreso" :size="128" :stroke-width="9"
-                                :stroke-color="{ '0%': '#1664db', '100%': '#1751df' }" />
+                                :stroke-color="{ '0%': '#2a8ad6', '100%': '#1b75bc' }" />
                             <div class="vp__side">
                                 <div class="vp__bar">
                                     <span class="vp__bar-seg vp--done" :style="{ width: seg.done + '%' }"></span>
@@ -649,7 +649,7 @@ onMounted(cargarDocumentos);
     width: 64px; height: 64px; flex: none; border-radius: 18px; overflow: hidden;
     display: flex; align-items: center; justify-content: center;
     font-weight: 700; font-size: 22px; color: #fff;
-    background: linear-gradient(135deg, #1851ad, #1751df);
+    background: linear-gradient(135deg, #1b75bc, #1b75bc);
 }
 .profile__avatar img { width: 100%; height: 100%; object-fit: cover; }
 .profile__body { flex: 1; min-width: 0; }
@@ -675,7 +675,7 @@ onMounted(cargarDocumentos);
 .vp__legend li { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--sains-muted); }
 .vp__legend b { color: #0f172a; font-weight: 800; font-size: 14px; }
 .vp__legend i { width: 9px; height: 9px; border-radius: 3px; flex: none; }
-.vp--done { background: #1664db; }
+.vp--done { background: #2a8ad6; }
 .vp--prog { background: #f59e0b; }
 .vp--none { background: #cbd5e1; }
 @media (max-width: 480px) { .vp { flex-direction: column; gap: 18px; } }
@@ -686,7 +686,7 @@ onMounted(cargarDocumentos);
 .week__bar-wrap { flex: 1; width: 100%; display: flex; align-items: flex-end; }
 .week__bar {
     width: 100%; border-radius: 6px 6px 0 0; min-height: 4px;
-    background: linear-gradient(180deg, #1664db, #1550d0);
+    background: linear-gradient(180deg, #2a8ad6, #1b75bc);
     transition: height .4s cubic-bezier(.16, 1, .3, 1);
 }
 .week__bar.is-zero { background: #e2e8f0; }
@@ -721,7 +721,7 @@ onMounted(cargarDocumentos);
     background: #fafbfd;
     transition: border-color .2s ease, background .2s ease, transform .15s ease;
 }
-.doc-row:hover { border-color: #c5d5e9; transform: translateY(-1px); }
+.doc-row:hover { border-color: #c4dcef; transform: translateY(-1px); }
 .doc-row--ok  { border-color: #bbf7d0; background: #f0fdf4; }
 .doc-row--ok:hover { border-color: #86efac; }
 .doc-row--rej { border-color: #fecaca; background: #fef2f2; }
@@ -860,28 +860,28 @@ onMounted(cargarDocumentos);
 
 .btn-action--ver {
     background: linear-gradient(135deg, #f2f6fa, #e1e9f4);
-    color: #135fbc;
+    color: #2a8ad6;
     border-color: #ccdaeb;
     box-shadow: 0 4px 10px -6px rgba(19, 95, 188, .4);
 }
 .btn-action--ver:hover {
     background: linear-gradient(135deg, #e1e9f4, #ccdaeb);
-    border-color: #7ba5d9;
-    color: #15509b;
+    border-color: #6aa8d8;
+    color: #1b75bc;
     box-shadow: 0 8px 16px -8px rgba(19, 95, 188, .55);
 }
 
 .btn-action--dl {
     background: linear-gradient(135deg, #f2f5fa, #e6ecf6);
-    color: #1550d0;
+    color: #1b75bc;
     border-color: #d1dbee;
-    box-shadow: 0 4px 10px -6px rgba(21, 80, 208, .4);
+    box-shadow: 0 4px 10px -6px rgba(27, 117, 188, .4);
 }
 .btn-action--dl:hover {
     background: linear-gradient(135deg, #e6ecf6, #d1dbee);
-    border-color: #7e9dd9;
-    color: #1d48a5;
-    box-shadow: 0 8px 16px -8px rgba(21, 80, 208, .55);
+    border-color: #6aa8d8;
+    color: #145a92;
+    box-shadow: 0 8px 16px -8px rgba(27, 117, 188, .55);
 }
 
 .btn-action--ok {

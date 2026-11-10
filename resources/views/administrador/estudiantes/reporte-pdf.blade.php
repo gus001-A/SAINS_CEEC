@@ -19,7 +19,7 @@
 
         /* ===== Encabezado ===== */
         .brandbar {
-            background: #1851ad;
+            background: #1b75bc;
             color: #ffffff;
             padding: 22px 34px;
         }
@@ -42,7 +42,7 @@
             margin-bottom: 20px;
         }
         .profile .name { font-size: 16px; font-weight: 700; color: #17325d; }
-        .profile .curp { font-size: 10px; color: #1664db; margin: 3px 0 9px; }
+        .profile .curp { font-size: 10px; color: #2a8ad6; margin: 3px 0 9px; }
         .chip {
             display: inline-block;
             padding: 3px 11px;
@@ -62,7 +62,7 @@
             width: 33.33%;
             background: #f8fafc;
             border: 1px solid #e2e8f0;
-            border-top: 3px solid #1851ad;
+            border-top: 3px solid #1b75bc;
             border-radius: 8px;
             padding: 12px 8px;
             text-align: center;
@@ -84,7 +84,7 @@
             color: #17325d;
             letter-spacing: 0.5px;
             padding: 0 0 6px 10px;
-            border-left: 3px solid #1851ad;
+            border-left: 3px solid #1b75bc;
             margin-bottom: 10px;
         }
 
@@ -109,7 +109,7 @@
 
         table.grid { width: 100%; border-collapse: collapse; }
         table.grid th {
-            background: #1851ad;
+            background: #1b75bc;
             color: #ffffff;
             padding: 7px 10px;
             text-align: left;
@@ -137,7 +137,7 @@
         .metrics .num { font-size: 16px; font-weight: 800; color: #0f172a; display: block; }
         .metrics .lbl { font-size: 8.5px; color: #64748b; margin: 3px 0; display: block; }
         .bar { background: #e2e8f0; height: 5px; border-radius: 3px; margin: 6px 0 3px; }
-        .bar > span { display: block; height: 5px; border-radius: 3px; background: #1851ad; }
+        .bar > span { display: block; height: 5px; border-radius: 3px; background: #1b75bc; }
 
         .score-high { color: #16a34a; font-weight: 700; }
         .score-low { color: #dc2626; font-weight: 700; }

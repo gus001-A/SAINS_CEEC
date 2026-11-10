@@ -280,7 +280,7 @@ onBeforeUnmount(() => Object.values(vistas).forEach((u) => URL.revokeObjectURL(u
     flex: none; width: 38px; height: 38px; border-radius: 10px; display: grid; place-items: center;
     font-size: 18px; background: #fef3c7; color: #b45309;
 }
-.plan-box__icon--tag { background: #e0eaf9; color: var(--sains-primary); }
+.plan-box__icon--tag { background: #e1eef8; color: var(--sains-primary); }
 .plan-box__text { display: flex; flex-direction: column; line-height: 1.3; min-width: 170px; }
 .plan-box__text b { font-size: 13.5px; color: var(--sains-ink); }
 .plan-box__text small { font-size: 12px; color: var(--sains-muted); }
@@ -300,7 +300,7 @@ onBeforeUnmount(() => Object.values(vistas).forEach((u) => URL.revokeObjectURL(u
     display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 12px;
     border: 1.5px dashed #cfd8e6; background: #fafbfd; transition: border-color .15s, background .15s;
 }
-.doc:hover, .doc.is-drag { border-color: var(--sains-primary); background: #f3f7fe; }
+.doc:hover, .doc.is-drag { border-color: var(--sains-primary); background: #f2f8fc; }
 .doc.has-file { border-style: solid; border-color: #bbf7d0; background: #f0fdf4; }
 .doc.has-err { border-color: #fca5a5; background: #fef2f2; }
 .doc__icon {

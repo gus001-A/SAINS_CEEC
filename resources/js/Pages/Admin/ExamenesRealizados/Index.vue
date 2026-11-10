@@ -53,9 +53,9 @@ function califColor(c) {
 
 const columns = [
     { title: 'Estudiante', dataIndex: 'estudiante', key: 'estudiante' },
-    { title: 'Calificación', dataIndex: 'calificacion', key: 'calif', width: 150, align: 'center' },
-    { title: 'Intento', dataIndex: 'intento', key: 'intento', width: 110, align: 'center' },
-    { title: 'Fecha y hora', dataIndex: 'fecha', key: 'fecha', width: 240 },
+    { title: 'Calificación', dataIndex: 'calificacion', key: 'calif', width: 130, align: 'center' },
+    { title: 'Intento', dataIndex: 'intento', key: 'intento', width: 100, align: 'center', responsive: ['lg'] },
+    { title: 'Fecha y hora', dataIndex: 'fecha', key: 'fecha', width: 190, responsive: ['md'] },
     { title: '', key: 'acciones', width: 90, align: 'right' },
 ];
 </script>
@@ -78,7 +78,7 @@ const columns = [
         </div>
 
         <a-card :bordered="false">
-            <a-table class="filtered-table" :columns="columns" :data-source="examenes.data" :pagination="pagination" row-key="id" size="middle" :scroll="{ x: 800 }" @change="onChange">
+            <a-table class="filtered-table" :columns="columns" :data-source="examenes.data" :pagination="pagination" row-key="id" size="middle" :scroll="{ x: 480 }" @change="onChange">
                 <template #summary>
                     <a-table-summary-row>
                         <a-table-summary-cell v-for="(col, i) in columns" :key="col.key ?? i" :index="i">

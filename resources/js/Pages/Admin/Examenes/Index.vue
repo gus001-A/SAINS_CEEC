@@ -64,8 +64,8 @@ const columns = [
     { title: 'Examen', key: 'id', width: 100 },
     { title: 'Tipo', dataIndex: 'tipo_examen', key: 'tipo' },
     { title: 'Preguntas', dataIndex: 'numero_preguntas', key: 'preguntas', width: 120, align: 'center' },
-    { title: 'Duración', key: 'tiempo', width: 140, align: 'center' },
-    { title: 'Creado', dataIndex: 'created_at', key: 'created_at', width: 150 },
+    { title: 'Duración', key: 'tiempo', width: 120, align: 'center', responsive: ['lg'] },
+    { title: 'Creado', dataIndex: 'created_at', key: 'created_at', width: 150, responsive: ['xl'] },
     { title: '', key: 'acciones', width: 160, align: 'right' },
 ];
 </script>
@@ -88,7 +88,7 @@ const columns = [
         </div>
 
         <a-card :bordered="false">
-            <a-table class="filtered-table" :columns="columns" :data-source="examenes.data" :pagination="pagination" row-key="id" size="middle" :scroll="{ x: 800 }" @change="onChange">
+            <a-table class="filtered-table" :columns="columns" :data-source="examenes.data" :pagination="pagination" row-key="id" size="middle" :scroll="{ x: 560 }" @change="onChange">
                 <template #summary>
                     <a-table-summary-row>
                         <a-table-summary-cell v-for="(col, i) in columns" :key="col.key ?? i" :index="i">

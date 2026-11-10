@@ -1,5 +1,6 @@
 <script setup>
 import { computed, onMounted, ref } from 'vue';
+import { urlApp } from '@/utils/urlApp';
 import { router, usePage } from '@inertiajs/vue3';
 import axios from 'axios';
 import {
@@ -32,7 +33,7 @@ const filtrados = computed(() => {
 // Últimos intentos para la mini-gráfica (del más antiguo al más reciente)
 const recientes = computed(() => [...examenes.value].slice(0, 8).reverse());
 
-const notaColor = (n) => (n >= 85 ? '#16a34a' : n >= 70 ? '#1851ad' : n >= 50 ? '#d97706' : '#dc2626');
+const notaColor = (n) => (n >= 85 ? '#16a34a' : n >= 70 ? '#1b75bc' : n >= 50 ? '#d97706' : '#dc2626');
 
 const cols = [
     { title: 'Examen', key: 'tipo' },
@@ -45,8 +46,8 @@ const cols = [
 onMounted(async () => {
     try {
         const [s, h] = await Promise.allSettled([
-            axios.get('/estudiante/api/estadisticas'),
-            axios.get('/estudiante/historial-examenes'),
+            axios.get(urlApp('/estudiante/api/estadisticas')),
+            axios.get(urlApp('/estudiante/historial-examenes')),
         ]);
         if (s.status === 'fulfilled') stats.value = s.value.data;
         if (h.status === 'fulfilled') examenes.value = h.value.data.examenes ?? [];
@@ -189,7 +190,7 @@ onMounted(async () => {
 </template>
 
 <style scoped>
-.hero-up { background: #fff !important; border-color: #fff !important; color: #1851ad !important; font-weight: 650; margin-top: 16px; }
+.hero-up { background: #fff !important; border-color: #fff !important; color: #1b75bc !important; font-weight: 650; margin-top: 16px; }
 .hero-up:hover { background: #eef2f8 !important; }
 
 .ex-toolbar { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }

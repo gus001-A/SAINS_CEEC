@@ -84,7 +84,7 @@ const examColumns = [
         <a-row :gutter="16" style="margin-top: 4px">
             <a-col :xs="24" :lg="15">
                 <a-card :bordered="false">
-                    <template #title><CheckCircleOutlined style="color: #1851ad" /> Últimos exámenes realizados</template>
+                    <template #title><CheckCircleOutlined style="color: #1b75bc" /> Últimos exámenes realizados</template>
                     <template #extra><Link :href="route('admin.examenes-realizados.index')">Ver todos <RightOutlined style="font-size: 10px" /></Link></template>
                     <a-table :columns="examColumns" :data-source="ultimosExamenes" :pagination="false" row-key="id" size="small">
                         <template #emptyText><a-empty description="Sin registros" /></template>
@@ -120,7 +120,7 @@ const examColumns = [
                 </a-card>
 
                 <a-card :bordered="false">
-                    <template #title><ClockCircleOutlined style="color: #ec4899" /> Interacciones recientes</template>
+                    <template #title><ClockCircleOutlined style="color: #f5b301" /> Interacciones recientes</template>
                     <template #extra><Link :href="route('admin.callcenter.index')">Ver todas <RightOutlined style="font-size: 10px" /></Link></template>
                     <a-list :data-source="ultimasInteracciones" size="small">
                         <template #renderItem="{ item }">
@@ -156,8 +156,8 @@ const examColumns = [
 .top-row__body { flex: 1; min-width: 0; }
 .top-row__name { font-size: 13px; font-weight: 600; color: #0f172a; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .top-bar { height: 6px; border-radius: 999px; background: #eef1f6; margin-top: 5px; overflow: hidden; }
-.top-bar__fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #1664db, #ec4899); }
-.top-row__score { font-weight: 800; color: #1851ad; font-size: 15px; flex: none; }
+.top-bar__fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #2a8ad6, #f5b301); }
+.top-row__score { font-weight: 800; color: #1b75bc; font-size: 15px; flex: none; }
 
 .rank {
     width: 28px; height: 28px; border-radius: 50%; flex: none;
@@ -165,12 +165,12 @@ const examColumns = [
     font-weight: 700; font-size: 12px;
     background: #f1f5f9; color: #475569;
 }
-.rank-1 { background: linear-gradient(135deg, #fcd34d, #f59e0b); color: #7c2d12; }
+.rank-1 { background: linear-gradient(135deg, #fcd34d, #f59e0b); color: #7a5600; }
 .rank-2 { background: linear-gradient(135deg, #e2e8f0, #cbd5e1); color: #475569; }
-.rank-3 { background: linear-gradient(135deg, #fdba74, #fb923c); color: #7c2d12; }
+.rank-3 { background: linear-gradient(135deg, #fdba74, #f5b301); color: #7a5600; }
 
 .cc-dot {
     width: 30px; height: 30px; border-radius: 9px; display: flex; align-items: center; justify-content: center;
-    background: #fce7f3; color: #db2777; font-size: 12px;
+    background: #fff4d1; color: #d99a00; font-size: 12px;
 }
 </style>

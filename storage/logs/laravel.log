@@ -1098,3 +1098,17 @@ Stack trace:
 [2026-11-09 16:39:55] local.INFO: Dashboard Stats Actualizado {"total_usuarios":2,"total_examenes":10,"examenes_realizados":0,"primer_examen_fecha":"sin datos"} 
 [2026-11-09 16:40:19] local.INFO: Dashboard Stats Actualizado {"total_usuarios":2,"total_examenes":10,"examenes_realizados":0,"primer_examen_fecha":"sin datos"} 
 [2026-11-09 16:40:31] local.INFO: Dashboard Stats Actualizado {"total_usuarios":2,"total_examenes":10,"examenes_realizados":0,"primer_examen_fecha":"sin datos"} 
+[2026-11-09 18:32:57] local.INFO: Dashboard Stats Actualizado {"total_usuarios":1,"total_examenes":10,"examenes_realizados":0,"primer_examen_fecha":"sin datos"} 
+[2026-11-09 18:33:39] local.INFO: Dashboard Stats Actualizado {"total_usuarios":1,"total_examenes":10,"examenes_realizados":0,"primer_examen_fecha":"sin datos"} 
+[2026-11-09 18:41:14] local.INFO: Dashboard Stats Actualizado {"total_usuarios":1,"total_examenes":10,"examenes_realizados":0,"primer_examen_fecha":"sin datos"} 
+[2026-11-09 18:42:31] local.INFO: Dashboard Stats Actualizado {"total_usuarios":1,"total_examenes":10,"examenes_realizados":0,"primer_examen_fecha":"sin datos"} 
+[2026-11-09 18:49:42] local.INFO: Dashboard Stats Actualizado {"total_usuarios":1,"total_examenes":10,"examenes_realizados":0,"primer_examen_fecha":"sin datos"} 
+[2026-11-09 18:49:50] local.INFO: Dashboard Stats Actualizado {"total_usuarios":1,"total_examenes":10,"examenes_realizados":0,"primer_examen_fecha":"sin datos"} 
+[2026-11-09 20:32:12] local.INFO: === EDIT EXAMEN ===  
+[2026-11-09 20:32:12] local.INFO: ID recibido: 10  
+[2026-11-09 20:32:12] local.INFO: Tipo de ID: string  
+[2026-11-09 20:32:12] local.INFO: Examen encontrado: 10 - Simulación  
+[2026-11-09 20:32:12] local.INFO: Preguntas seleccionadas: [9,14,20,26,32,38,46,50,52,57,62,68,76,81,83,86,91,94,98,99]  
+[2026-11-09 20:32:16] local.INFO: === UPDATE EXAMEN ===  
+[2026-11-09 20:32:16] local.INFO: ID: 10  
+[2026-11-09 20:32:16] local.INFO: Request data: {"tipo_examen":"Simulaci\u00f3n","tiempo":30,"numero_preguntas":20,"completar_aleatorio":false,"preguntas_seleccionadas":[9,14,20,26,32,38,46,50,52,57,62,68,76,81,83,86,91,94,98,99]}  
